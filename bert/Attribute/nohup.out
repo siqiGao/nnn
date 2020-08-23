@@ -1,0 +1,1104 @@
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fd80b095828>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fd80ab06390>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Writing example 0 of 14595
+INFO:tensorflow:Writing example 10000 of 14595
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From similarity.py:583: map_and_batch (from tensorflow.contrib.data.python.ops.batching) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.map_and_batch(...)`.
+WARNING:tensorflow:From similarity.py:563: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:*** Features ***
+INFO:tensorflow:  name = input_ids, shape = (8, 55)
+INFO:tensorflow:  name = input_mask, shape = (8, 55)
+INFO:tensorflow:  name = label_ids, shape = (8,)
+INFO:tensorflow:  name = segment_ids, shape = (8, 55)
+WARNING:tensorflow:From /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/modeling.py:359: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/modeling.py:673: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/learning_rate_decay_v2.py:321: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7feab51db828>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7feab4c4c390>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Writing example 0 of 14595
+INFO:tensorflow:Writing example 10000 of 14595
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From similarity.py:583: map_and_batch (from tensorflow.contrib.data.python.ops.batching) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.map_and_batch(...)`.
+WARNING:tensorflow:From similarity.py:563: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:*** Features ***
+INFO:tensorflow:  name = input_ids, shape = (8, 55)
+INFO:tensorflow:  name = input_mask, shape = (8, 55)
+INFO:tensorflow:  name = label_ids, shape = (8,)
+INFO:tensorflow:  name = segment_ids, shape = (8, 55)
+WARNING:tensorflow:From /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/modeling.py:359: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/modeling.py:673: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/learning_rate_decay_v2.py:321: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+2020-07-25 00:47:01.705315: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-07-25 00:47:01.710919: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2398845000 Hz
+2020-07-25 00:47:01.711785: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x563979509460 executing computations on platform Host. Devices:
+2020-07-25 00:47:01.711816: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt-0
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1070: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 0 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:loss = 0.8363897, step = 1
+INFO:tensorflow:global_step/sec: 0.523398
+INFO:tensorflow:loss = 0.18325202, step = 101 (191.060 sec)
+INFO:tensorflow:global_step/sec: 0.537524
+INFO:tensorflow:loss = 0.38088524, step = 201 (186.038 sec)
+INFO:tensorflow:global_step/sec: 0.536055
+INFO:tensorflow:loss = 0.11787045, step = 301 (186.548 sec)
+INFO:tensorflow:Saving checkpoints for 317 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527935
+INFO:tensorflow:loss = 0.65573597, step = 401 (189.417 sec)
+INFO:tensorflow:global_step/sec: 0.532818
+INFO:tensorflow:loss = 0.0078004207, step = 501 (187.681 sec)
+INFO:tensorflow:global_step/sec: 0.532928
+INFO:tensorflow:loss = 0.36116248, step = 601 (187.642 sec)
+INFO:tensorflow:Saving checkpoints for 636 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527547
+INFO:tensorflow:loss = 0.024505794, step = 701 (189.557 sec)
+INFO:tensorflow:global_step/sec: 0.505933
+INFO:tensorflow:loss = 0.13561128, step = 801 (197.654 sec)
+INFO:tensorflow:global_step/sec: 0.531602
+INFO:tensorflow:loss = 0.801465, step = 901 (188.111 sec)
+INFO:tensorflow:Saving checkpoints for 950 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526383
+INFO:tensorflow:loss = 0.462048, step = 1001 (189.976 sec)
+INFO:tensorflow:global_step/sec: 0.532513
+INFO:tensorflow:loss = 0.010927688, step = 1101 (187.789 sec)
+INFO:tensorflow:global_step/sec: 0.532377
+INFO:tensorflow:loss = 0.0068419073, step = 1201 (187.837 sec)
+INFO:tensorflow:Saving checkpoints for 1269 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526589
+INFO:tensorflow:loss = 0.0009542224, step = 1301 (189.902 sec)
+INFO:tensorflow:global_step/sec: 0.532936
+INFO:tensorflow:loss = 0.0050174375, step = 1401 (187.640 sec)
+INFO:tensorflow:global_step/sec: 0.53324
+INFO:tensorflow:loss = 0.68708885, step = 1501 (187.533 sec)
+INFO:tensorflow:Saving checkpoints for 1588 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+INFO:tensorflow:global_step/sec: 0.527387
+INFO:tensorflow:loss = 0.36772692, step = 1601 (189.614 sec)
+INFO:tensorflow:global_step/sec: 0.534133
+INFO:tensorflow:loss = 0.01390975, step = 1701 (187.219 sec)
+INFO:tensorflow:global_step/sec: 0.533233
+INFO:tensorflow:loss = 0.0064119045, step = 1801 (187.535 sec)
+INFO:tensorflow:global_step/sec: 0.533193
+INFO:tensorflow:loss = 0.53709733, step = 1901 (187.549 sec)
+INFO:tensorflow:Saving checkpoints for 1908 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527348
+INFO:tensorflow:loss = 0.12411176, step = 2001 (189.628 sec)
+INFO:tensorflow:global_step/sec: 0.533059
+INFO:tensorflow:loss = 0.5912455, step = 2101 (187.596 sec)
+INFO:tensorflow:global_step/sec: 0.533346
+INFO:tensorflow:loss = 0.6212269, step = 2201 (187.496 sec)
+INFO:tensorflow:Saving checkpoints for 2227 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.52695
+INFO:tensorflow:loss = 0.0034438963, step = 2301 (189.771 sec)
+INFO:tensorflow:global_step/sec: 0.532843
+INFO:tensorflow:loss = 0.0022515887, step = 2401 (187.673 sec)
+INFO:tensorflow:global_step/sec: 0.532078
+INFO:tensorflow:loss = 0.6137368, step = 2501 (187.942 sec)
+INFO:tensorflow:Saving checkpoints for 2546 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526277
+INFO:tensorflow:loss = 0.015568542, step = 2601 (190.014 sec)
+INFO:tensorflow:global_step/sec: 0.531184
+INFO:tensorflow:loss = 0.92170566, step = 2701 (188.259 sec)
+INFO:tensorflow:global_step/sec: 0.530634
+INFO:tensorflow:loss = 0.039826013, step = 2801 (188.454 sec)
+INFO:tensorflow:Saving checkpoints for 2864 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525874
+INFO:tensorflow:loss = 0.0029819603, step = 2901 (190.160 sec)
+INFO:tensorflow:global_step/sec: 0.531185
+INFO:tensorflow:loss = 0.005414163, step = 3001 (188.258 sec)
+INFO:tensorflow:global_step/sec: 0.531589
+INFO:tensorflow:loss = 0.0021933757, step = 3101 (188.115 sec)
+INFO:tensorflow:Saving checkpoints for 3182 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525691
+INFO:tensorflow:loss = 0.0035539914, step = 3201 (190.226 sec)
+INFO:tensorflow:global_step/sec: 0.531172
+INFO:tensorflow:loss = 0.0011368396, step = 3301 (188.263 sec)
+INFO:tensorflow:global_step/sec: 0.531753
+INFO:tensorflow:loss = 0.040111326, step = 3401 (188.057 sec)
+INFO:tensorflow:Saving checkpoints for 3500 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525783
+INFO:tensorflow:loss = 0.06108404, step = 3501 (190.192 sec)
+INFO:tensorflow:global_step/sec: 0.532628
+INFO:tensorflow:loss = 0.0041710995, step = 3601 (187.748 sec)
+INFO:tensorflow:global_step/sec: 0.533392
+INFO:tensorflow:loss = 0.26306772, step = 3701 (187.479 sec)
+INFO:tensorflow:global_step/sec: 0.533132
+INFO:tensorflow:loss = 0.8691435, step = 3801 (187.571 sec)
+INFO:tensorflow:Saving checkpoints for 3819 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527324
+INFO:tensorflow:loss = 0.119359426, step = 3901 (189.637 sec)
+INFO:tensorflow:global_step/sec: 0.531865
+INFO:tensorflow:loss = 0.039453268, step = 4001 (188.018 sec)
+INFO:tensorflow:global_step/sec: 0.533588
+INFO:tensorflow:loss = 0.0076310053, step = 4101 (187.410 sec)
+INFO:tensorflow:Saving checkpoints for 4138 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526143
+INFO:tensorflow:loss = 0.0017202448, step = 4201 (190.063 sec)
+INFO:tensorflow:global_step/sec: 0.52219
+INFO:tensorflow:loss = 0.028890435, step = 4301 (191.501 sec)
+INFO:tensorflow:global_step/sec: 0.517975
+INFO:tensorflow:loss = 0.00985683, step = 4401 (193.060 sec)
+INFO:tensorflow:Saving checkpoints for 4450 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.511252
+INFO:tensorflow:loss = 0.59907347, step = 4501 (195.598 sec)
+INFO:tensorflow:global_step/sec: 0.517215
+INFO:tensorflow:loss = 0.011325987, step = 4601 (193.343 sec)
+INFO:tensorflow:global_step/sec: 0.516802
+INFO:tensorflow:loss = 0.0039128545, step = 4701 (193.498 sec)
+INFO:tensorflow:Saving checkpoints for 4760 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.512302
+INFO:tensorflow:loss = 0.014688204, step = 4801 (195.198 sec)
+INFO:tensorflow:global_step/sec: 0.516825
+INFO:tensorflow:loss = 0.003315065, step = 4901 (193.489 sec)
+INFO:tensorflow:global_step/sec: 0.516785
+INFO:tensorflow:loss = 0.0068305917, step = 5001 (193.504 sec)
+INFO:tensorflow:Saving checkpoints for 5069 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.510122
+INFO:tensorflow:loss = 0.000751107, step = 5101 (196.032 sec)
+INFO:tensorflow:global_step/sec: 0.516263
+INFO:tensorflow:loss = 0.0011975841, step = 5201 (193.700 sec)
+INFO:tensorflow:global_step/sec: 0.516266
+INFO:tensorflow:loss = 0.95310223, step = 5301 (193.699 sec)
+INFO:tensorflow:Saving checkpoints for 5378 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.51153
+INFO:tensorflow:loss = 0.0073580244, step = 5401 (195.492 sec)
+INFO:tensorflow:global_step/sec: 0.518547
+INFO:tensorflow:loss = 0.014893672, step = 5501 (192.847 sec)
+INFO:tensorflow:global_step/sec: 0.517202
+INFO:tensorflow:loss = 0.5423938, step = 5601 (193.348 sec)
+INFO:tensorflow:Saving checkpoints for 5688 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.512013
+INFO:tensorflow:loss = 0.0032261917, step = 5701 (195.308 sec)
+INFO:tensorflow:global_step/sec: 0.519051
+INFO:tensorflow:loss = 0.0043087685, step = 5801 (192.659 sec)
+INFO:tensorflow:global_step/sec: 0.51764
+INFO:tensorflow:loss = 0.001883306, step = 5901 (193.184 sec)
+INFO:tensorflow:Saving checkpoints for 5998 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.512281
+INFO:tensorflow:loss = 0.0010874309, step = 6001 (195.205 sec)
+INFO:tensorflow:global_step/sec: 0.518429
+INFO:tensorflow:loss = 0.0019685468, step = 6101 (192.890 sec)
+INFO:tensorflow:global_step/sec: 0.517622
+INFO:tensorflow:loss = 0.003808985, step = 6201 (193.191 sec)
+INFO:tensorflow:global_step/sec: 0.517274
+INFO:tensorflow:loss = 0.0011501727, step = 6301 (193.321 sec)
+INFO:tensorflow:Saving checkpoints for 6308 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.513379
+INFO:tensorflow:loss = 0.007883604, step = 6401 (194.788 sec)
+INFO:tensorflow:global_step/sec: 0.519167
+INFO:tensorflow:loss = 0.0060439333, step = 6501 (192.616 sec)
+INFO:tensorflow:global_step/sec: 0.518864
+INFO:tensorflow:loss = 0.001143506, step = 6601 (192.729 sec)
+INFO:tensorflow:Saving checkpoints for 6619 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.513217
+INFO:tensorflow:loss = 0.0007554057, step = 6701 (194.850 sec)
+INFO:tensorflow:global_step/sec: 0.519164
+INFO:tensorflow:loss = 0.0023166141, step = 6801 (192.618 sec)
+INFO:tensorflow:global_step/sec: 0.519927
+INFO:tensorflow:loss = 0.00028197802, step = 6901 (192.335 sec)
+INFO:tensorflow:Saving checkpoints for 6930 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.51425
+INFO:tensorflow:loss = 0.00062595267, step = 7001 (194.458 sec)
+INFO:tensorflow:global_step/sec: 0.52013
+INFO:tensorflow:loss = 0.031366356, step = 7101 (192.259 sec)
+INFO:tensorflow:global_step/sec: 0.519753
+INFO:tensorflow:loss = 0.00103679, step = 7201 (192.399 sec)
+INFO:tensorflow:Saving checkpoints for 7241 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.51551
+INFO:tensorflow:loss = 0.3529684, step = 7301 (193.983 sec)
+INFO:tensorflow:global_step/sec: 0.520808
+INFO:tensorflow:loss = 0.0068708975, step = 7401 (192.009 sec)
+INFO:tensorflow:global_step/sec: 0.520495
+INFO:tensorflow:loss = 0.0023210396, step = 7501 (192.125 sec)
+INFO:tensorflow:Saving checkpoints for 7553 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.515883
+INFO:tensorflow:loss = 0.0034401598, step = 7601 (193.842 sec)
+INFO:tensorflow:global_step/sec: 0.522401
+INFO:tensorflow:loss = 0.0028192387, step = 7701 (191.424 sec)
+INFO:tensorflow:global_step/sec: 0.52164
+INFO:tensorflow:loss = 0.0011152959, step = 7801 (191.703 sec)
+INFO:tensorflow:Saving checkpoints for 7866 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.516449
+INFO:tensorflow:loss = 0.5108708, step = 7901 (193.630 sec)
+INFO:tensorflow:global_step/sec: 0.523583
+INFO:tensorflow:loss = 0.0038893572, step = 8001 (190.992 sec)
+INFO:tensorflow:global_step/sec: 0.52441
+INFO:tensorflow:loss = 0.84482616, step = 8101 (190.691 sec)
+INFO:tensorflow:Saving checkpoints for 8179 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.518012
+INFO:tensorflow:loss = 0.54969406, step = 8201 (193.046 sec)
+INFO:tensorflow:global_step/sec: 0.524931
+INFO:tensorflow:loss = 0.002683014, step = 8301 (190.501 sec)
+INFO:tensorflow:global_step/sec: 0.524385
+INFO:tensorflow:loss = 0.002213458, step = 8401 (190.700 sec)
+INFO:tensorflow:Saving checkpoints for 8493 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.519157
+INFO:tensorflow:loss = 0.0013382942, step = 8501 (192.620 sec)
+INFO:tensorflow:global_step/sec: 0.524466
+INFO:tensorflow:loss = 0.00028896568, step = 8601 (190.670 sec)
+INFO:tensorflow:global_step/sec: 0.525852
+INFO:tensorflow:loss = 0.0011345773, step = 8701 (190.168 sec)
+INFO:tensorflow:global_step/sec: 0.526445
+INFO:tensorflow:loss = 0.00043343726, step = 8801 (189.954 sec)
+INFO:tensorflow:Saving checkpoints for 8808 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.520802
+INFO:tensorflow:loss = 0.0029454888, step = 8901 (192.011 sec)
+INFO:tensorflow:global_step/sec: 0.525746
+INFO:tensorflow:loss = 0.0012811403, step = 9001 (190.206 sec)
+INFO:tensorflow:global_step/sec: 0.525296
+INFO:tensorflow:loss = 0.00047692534, step = 9101 (190.369 sec)
+INFO:tensorflow:Saving checkpoints for 9123 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.520324
+INFO:tensorflow:loss = 0.0013579484, step = 9201 (192.188 sec)
+INFO:tensorflow:global_step/sec: 0.525943
+INFO:tensorflow:loss = 0.007208102, step = 9301 (190.135 sec)
+INFO:tensorflow:global_step/sec: 0.525756
+INFO:tensorflow:loss = 0.0020707557, step = 9401 (190.202 sec)
+INFO:tensorflow:Saving checkpoints for 9438 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.520185
+INFO:tensorflow:loss = 0.0033333963, step = 9501 (192.239 sec)
+INFO:tensorflow:global_step/sec: 0.527755
+INFO:tensorflow:loss = 0.0009919415, step = 9601 (189.482 sec)
+INFO:tensorflow:global_step/sec: 0.526792
+INFO:tensorflow:loss = 0.00091065816, step = 9701 (189.828 sec)
+INFO:tensorflow:Saving checkpoints for 9754 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.521671
+INFO:tensorflow:loss = 0.002084638, step = 9801 (191.692 sec)
+INFO:tensorflow:global_step/sec: 0.527322
+INFO:tensorflow:loss = 0.0038411242, step = 9901 (189.637 sec)
+INFO:tensorflow:global_step/sec: 0.52695
+INFO:tensorflow:loss = 0.0050647873, step = 10001 (189.771 sec)
+INFO:tensorflow:Saving checkpoints for 10070 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.521932
+INFO:tensorflow:loss = 0.0005038251, step = 10101 (191.596 sec)
+INFO:tensorflow:global_step/sec: 0.527785
+INFO:tensorflow:loss = 0.0065212627, step = 10201 (189.471 sec)
+INFO:tensorflow:global_step/sec: 0.528607
+INFO:tensorflow:loss = 0.0010613592, step = 10301 (189.177 sec)
+INFO:tensorflow:Saving checkpoints for 10386 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.522753
+INFO:tensorflow:loss = 0.00016786205, step = 10401 (191.295 sec)
+INFO:tensorflow:global_step/sec: 0.529286
+INFO:tensorflow:loss = 0.00034255238, step = 10501 (188.934 sec)
+INFO:tensorflow:global_step/sec: 0.528971
+INFO:tensorflow:loss = 0.0008055811, step = 10601 (189.046 sec)
+INFO:tensorflow:global_step/sec: 0.530667
+INFO:tensorflow:loss = 0.0010737078, step = 10701 (188.442 sec)
+INFO:tensorflow:Saving checkpoints for 10703 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.523326
+INFO:tensorflow:loss = 0.0007758056, step = 10801 (191.086 sec)
+INFO:tensorflow:global_step/sec: 0.528873
+INFO:tensorflow:loss = 0.187329, step = 10901 (189.081 sec)
+INFO:tensorflow:global_step/sec: 0.529438
+INFO:tensorflow:loss = 0.0014210758, step = 11001 (188.880 sec)
+INFO:tensorflow:Saving checkpoints for 11020 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.52472
+INFO:tensorflow:loss = 0.0034525895, step = 11101 (190.578 sec)
+INFO:tensorflow:global_step/sec: 0.529357
+INFO:tensorflow:loss = 0.7949957, step = 11201 (188.909 sec)
+INFO:tensorflow:global_step/sec: 0.528043
+INFO:tensorflow:loss = 0.0014885667, step = 11301 (189.379 sec)
+INFO:tensorflow:Saving checkpoints for 11337 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.523903
+INFO:tensorflow:loss = 0.0014840132, step = 11401 (190.875 sec)
+INFO:tensorflow:global_step/sec: 0.52991
+INFO:tensorflow:loss = 0.00093983026, step = 11501 (188.711 sec)
+INFO:tensorflow:global_step/sec: 0.529636
+INFO:tensorflow:loss = 0.0018564443, step = 11601 (188.809 sec)
+INFO:tensorflow:Saving checkpoints for 11654 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524151
+INFO:tensorflow:loss = 0.0018938528, step = 11701 (190.785 sec)
+INFO:tensorflow:global_step/sec: 0.530361
+INFO:tensorflow:loss = 0.00053751667, step = 11801 (188.551 sec)
+INFO:tensorflow:global_step/sec: 0.530682
+INFO:tensorflow:loss = 0.00020394544, step = 11901 (188.437 sec)
+INFO:tensorflow:Saving checkpoints for 11972 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525689
+INFO:tensorflow:loss = 0.72338873, step = 12001 (190.226 sec)
+INFO:tensorflow:global_step/sec: 0.531891
+INFO:tensorflow:loss = 0.00040471274, step = 12101 (188.008 sec)
+INFO:tensorflow:global_step/sec: 0.533059
+INFO:tensorflow:loss = 0.00039263273, step = 12201 (187.597 sec)
+INFO:tensorflow:Saving checkpoints for 12291 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526614
+INFO:tensorflow:loss = 0.00042450652, step = 12301 (189.892 sec)
+INFO:tensorflow:global_step/sec: 0.53217
+INFO:tensorflow:loss = 0.0002594206, step = 12401 (187.910 sec)
+INFO:tensorflow:global_step/sec: 0.532848
+INFO:tensorflow:loss = 0.00028185782, step = 12501 (187.671 sec)
+INFO:tensorflow:global_step/sec: 0.532538
+INFO:tensorflow:loss = 0.000616204, step = 12601 (187.780 sec)
+INFO:tensorflow:Saving checkpoints for 12610 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526628
+INFO:tensorflow:loss = 0.00077463326, step = 12701 (189.887 sec)
+INFO:tensorflow:global_step/sec: 0.532826
+INFO:tensorflow:loss = 0.00052072527, step = 12801 (187.679 sec)
+INFO:tensorflow:global_step/sec: 0.532544
+INFO:tensorflow:loss = 0.00015330766, step = 12901 (187.778 sec)
+INFO:tensorflow:Saving checkpoints for 12929 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527811
+INFO:tensorflow:loss = 0.0010747905, step = 13001 (189.462 sec)
+INFO:tensorflow:global_step/sec: 0.532916
+INFO:tensorflow:loss = 0.000975217, step = 13101 (187.647 sec)
+INFO:tensorflow:global_step/sec: 0.532955
+INFO:tensorflow:loss = 0.0009401472, step = 13201 (187.633 sec)
+INFO:tensorflow:Saving checkpoints for 13248 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527106
+INFO:tensorflow:loss = 0.00054028997, step = 13301 (189.715 sec)
+INFO:tensorflow:global_step/sec: 0.533001
+INFO:tensorflow:loss = 0.0004841374, step = 13401 (187.617 sec)
+INFO:tensorflow:global_step/sec: 0.533216
+INFO:tensorflow:loss = 0.00071084383, step = 13501 (187.541 sec)
+INFO:tensorflow:Saving checkpoints for 13567 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526826
+INFO:tensorflow:loss = 0.0009927959, step = 13601 (189.816 sec)
+INFO:tensorflow:global_step/sec: 0.53232
+INFO:tensorflow:loss = 0.0004775886, step = 13701 (187.857 sec)
+INFO:tensorflow:global_step/sec: 0.533214
+INFO:tensorflow:loss = 0.0005370797, step = 13801 (187.542 sec)
+INFO:tensorflow:Saving checkpoints for 13886 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527707
+INFO:tensorflow:loss = 0.0006857051, step = 13901 (189.499 sec)
+INFO:tensorflow:global_step/sec: 0.533896
+INFO:tensorflow:loss = 0.0007746077, step = 14001 (187.303 sec)
+INFO:tensorflow:global_step/sec: 0.533869
+INFO:tensorflow:loss = 0.0003717524, step = 14101 (187.312 sec)
+INFO:tensorflow:global_step/sec: 0.533965
+INFO:tensorflow:loss = 0.00011567086, step = 14201 (187.278 sec)
+INFO:tensorflow:Saving checkpoints for 14206 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529052
+INFO:tensorflow:loss = 0.0002455571, step = 14301 (189.017 sec)
+INFO:tensorflow:global_step/sec: 0.534473
+INFO:tensorflow:loss = 0.00032171397, step = 14401 (187.100 sec)
+INFO:tensorflow:global_step/sec: 0.534568
+INFO:tensorflow:loss = 0.00011736197, step = 14501 (187.067 sec)
+INFO:tensorflow:Saving checkpoints for 14526 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528466
+INFO:tensorflow:loss = 0.00017048369, step = 14601 (189.227 sec)
+INFO:tensorflow:global_step/sec: 0.533703
+INFO:tensorflow:loss = 0.00032265682, step = 14701 (187.370 sec)
+INFO:tensorflow:global_step/sec: 0.534231
+INFO:tensorflow:loss = 0.76090246, step = 14801 (187.185 sec)
+INFO:tensorflow:Saving checkpoints for 14846 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528463
+INFO:tensorflow:loss = 0.000678346, step = 14901 (189.228 sec)
+INFO:tensorflow:global_step/sec: 0.534514
+INFO:tensorflow:loss = 0.0007288646, step = 15001 (187.086 sec)
+INFO:tensorflow:global_step/sec: 0.53408
+INFO:tensorflow:loss = 0.0007272813, step = 15101 (187.238 sec)
+INFO:tensorflow:Saving checkpoints for 15166 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529126
+INFO:tensorflow:loss = 0.00061311794, step = 15201 (188.991 sec)
+INFO:tensorflow:global_step/sec: 0.534388
+INFO:tensorflow:loss = 0.0008427604, step = 15301 (187.130 sec)
+INFO:tensorflow:global_step/sec: 0.533694
+INFO:tensorflow:loss = 0.0007463005, step = 15401 (187.373 sec)
+INFO:tensorflow:Saving checkpoints for 15486 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528048
+INFO:tensorflow:loss = 0.0008089362, step = 15501 (189.377 sec)
+INFO:tensorflow:global_step/sec: 0.535675
+INFO:tensorflow:loss = 0.0010187521, step = 15601 (186.680 sec)
+INFO:tensorflow:global_step/sec: 0.535643
+INFO:tensorflow:loss = 0.00044689077, step = 15701 (186.691 sec)
+INFO:tensorflow:global_step/sec: 0.534954
+INFO:tensorflow:loss = 0.00022544281, step = 15801 (186.932 sec)
+INFO:tensorflow:Saving checkpoints for 15807 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529168
+INFO:tensorflow:loss = 0.60290325, step = 15901 (188.976 sec)
+INFO:tensorflow:global_step/sec: 0.535101
+INFO:tensorflow:loss = 0.000606145, step = 16001 (186.880 sec)
+INFO:tensorflow:global_step/sec: 0.535223
+INFO:tensorflow:loss = 0.00052634574, step = 16101 (186.838 sec)
+INFO:tensorflow:Saving checkpoints for 16127 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529424
+INFO:tensorflow:loss = 0.002577443, step = 16201 (188.885 sec)
+INFO:tensorflow:global_step/sec: 0.535971
+INFO:tensorflow:loss = 0.00014570722, step = 16301 (186.577 sec)
+INFO:tensorflow:global_step/sec: 0.535865
+INFO:tensorflow:loss = 0.00034402485, step = 16401 (186.614 sec)
+INFO:tensorflow:Saving checkpoints for 16448 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.530724
+INFO:tensorflow:loss = 0.00013034664, step = 16501 (188.422 sec)
+INFO:tensorflow:global_step/sec: 0.536341
+INFO:tensorflow:loss = 0.00037963165, step = 16601 (186.449 sec)
+INFO:tensorflow:global_step/sec: 0.535705
+INFO:tensorflow:loss = 0.000495381, step = 16701 (186.670 sec)
+INFO:tensorflow:Saving checkpoints for 16769 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529082
+INFO:tensorflow:loss = 0.00043792243, step = 16801 (189.007 sec)
+INFO:tensorflow:global_step/sec: 0.535343
+INFO:tensorflow:loss = 0.0006873645, step = 16901 (186.796 sec)
+INFO:tensorflow:global_step/sec: 0.535727
+INFO:tensorflow:loss = 0.0006061104, step = 17001 (186.662 sec)
+INFO:tensorflow:Saving checkpoints for 17090 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529645
+INFO:tensorflow:loss = 0.00058236206, step = 17101 (188.806 sec)
+INFO:tensorflow:global_step/sec: 0.534874
+INFO:tensorflow:loss = 0.0004551357, step = 17201 (186.960 sec)
+INFO:tensorflow:global_step/sec: 0.535617
+INFO:tensorflow:loss = 0.00039970985, step = 17301 (186.701 sec)
+INFO:tensorflow:global_step/sec: 0.534612
+INFO:tensorflow:loss = 0.00051880995, step = 17401 (187.052 sec)
+INFO:tensorflow:Saving checkpoints for 17410 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529863
+INFO:tensorflow:loss = 0.00021924567, step = 17501 (188.728 sec)
+INFO:tensorflow:global_step/sec: 0.535548
+INFO:tensorflow:loss = 0.0003424732, step = 17601 (186.724 sec)
+INFO:tensorflow:global_step/sec: 0.535205
+INFO:tensorflow:loss = 0.0002540156, step = 17701 (186.844 sec)
+INFO:tensorflow:Saving checkpoints for 17731 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528878
+INFO:tensorflow:loss = 0.00040151092, step = 17801 (189.079 sec)
+INFO:tensorflow:global_step/sec: 0.53428
+INFO:tensorflow:loss = 0.0004707175, step = 17901 (187.168 sec)
+INFO:tensorflow:global_step/sec: 0.534651
+INFO:tensorflow:loss = 0.00016139615, step = 18001 (187.038 sec)
+INFO:tensorflow:Saving checkpoints for 18051 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529362
+INFO:tensorflow:loss = 0.00016590962, step = 18101 (188.907 sec)
+INFO:tensorflow:global_step/sec: 0.535689
+INFO:tensorflow:loss = 0.0003298105, step = 18201 (186.676 sec)
+INFO:tensorflow:Saving checkpoints for 18243 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:Loss for final step: 0.0001651355.
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7feab5296b38>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Writing example 0 of 9117
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7feaa05cf5f8>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:*** Features ***
+INFO:tensorflow:  name = input_ids, shape = (?, 55)
+INFO:tensorflow:  name = input_mask, shape = (?, 55)
+INFO:tensorflow:  name = label_ids, shape = (?,)
+INFO:tensorflow:  name = segment_ids, shape = (?, 55)
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/ops/metrics_impl.py:455: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2020-07-25T02:24:13Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt-18243
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2020-07-25-02:30:54
+INFO:tensorflow:Saving dict for global step 18243: eval_accuracy = 0.8509378, eval_auc = 0.75058377, eval_loss = 1.1874361, global_step = 18243, loss = 1.1876076
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 18243: /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt-18243
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7faa96255828>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7faa95cc6390>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Writing example 0 of 14595
+INFO:tensorflow:Writing example 10000 of 14595
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From similarity.py:583: map_and_batch (from tensorflow.contrib.data.python.ops.batching) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.map_and_batch(...)`.
+WARNING:tensorflow:From similarity.py:563: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:*** Features ***
+INFO:tensorflow:  name = input_ids, shape = (8, 55)
+INFO:tensorflow:  name = input_mask, shape = (8, 55)
+INFO:tensorflow:  name = label_ids, shape = (8,)
+INFO:tensorflow:  name = segment_ids, shape = (8, 55)
+WARNING:tensorflow:From /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/modeling.py:359: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/modeling.py:673: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/learning_rate_decay_v2.py:321: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+2020-07-25 11:29:39.124873: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-07-25 11:29:39.130078: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2398845000 Hz
+2020-07-25 11:29:39.131135: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55dad927de60 executing computations on platform Host. Devices:
+2020-07-25 11:29:39.131164: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt-18243
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1070: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 18243 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:loss = 0.00035355688, step = 18244
+INFO:tensorflow:global_step/sec: 0.481201
+INFO:tensorflow:loss = 1.0397017, step = 18344 (207.813 sec)
+INFO:tensorflow:global_step/sec: 0.518934
+INFO:tensorflow:loss = 0.0002529228, step = 18444 (192.703 sec)
+INFO:tensorflow:Saving checkpoints for 18544 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+INFO:tensorflow:global_step/sec: 0.512743
+INFO:tensorflow:loss = 0.0010183654, step = 18544 (195.029 sec)
+INFO:tensorflow:global_step/sec: 0.517916
+INFO:tensorflow:loss = 0.8017208, step = 18644 (193.081 sec)
+INFO:tensorflow:global_step/sec: 0.518393
+INFO:tensorflow:loss = 0.00071645295, step = 18744 (192.904 sec)
+INFO:tensorflow:global_step/sec: 0.517512
+INFO:tensorflow:loss = 0.00062975206, step = 18844 (193.232 sec)
+INFO:tensorflow:Saving checkpoints for 18854 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.512735
+INFO:tensorflow:loss = 0.0009302652, step = 18944 (195.033 sec)
+INFO:tensorflow:global_step/sec: 0.518247
+INFO:tensorflow:loss = 0.000941457, step = 19044 (192.958 sec)
+INFO:tensorflow:global_step/sec: 0.517894
+INFO:tensorflow:loss = 0.003065869, step = 19144 (193.090 sec)
+INFO:tensorflow:Saving checkpoints for 19164 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.512531
+INFO:tensorflow:loss = 0.5323038, step = 19244 (195.110 sec)
+INFO:tensorflow:global_step/sec: 0.51813
+INFO:tensorflow:loss = 0.00053707825, step = 19344 (193.002 sec)
+INFO:tensorflow:global_step/sec: 0.520848
+INFO:tensorflow:loss = 0.00043970053, step = 19444 (191.995 sec)
+INFO:tensorflow:Saving checkpoints for 19475 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.515756
+INFO:tensorflow:loss = 0.000540665, step = 19544 (193.890 sec)
+INFO:tensorflow:global_step/sec: 0.521623
+INFO:tensorflow:loss = 0.00044695463, step = 19644 (191.709 sec)
+INFO:tensorflow:global_step/sec: 0.521888
+INFO:tensorflow:loss = 0.00033830997, step = 19744 (191.612 sec)
+INFO:tensorflow:Saving checkpoints for 19787 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.517882
+INFO:tensorflow:loss = 0.00066717475, step = 19844 (193.094 sec)
+INFO:tensorflow:global_step/sec: 0.526826
+INFO:tensorflow:loss = 0.0006465841, step = 19944 (189.816 sec)
+INFO:tensorflow:global_step/sec: 0.528144
+INFO:tensorflow:loss = 4.7384507e-05, step = 20044 (189.342 sec)
+INFO:tensorflow:Saving checkpoints for 20103 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.52369
+INFO:tensorflow:loss = 0.00034286478, step = 20144 (190.952 sec)
+INFO:tensorflow:global_step/sec: 0.530914
+INFO:tensorflow:loss = 4.6981982e-05, step = 20244 (188.354 sec)
+INFO:tensorflow:global_step/sec: 0.531111
+INFO:tensorflow:loss = 0.002370564, step = 20344 (188.284 sec)
+INFO:tensorflow:Saving checkpoints for 20421 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525505
+INFO:tensorflow:loss = 0.0005547015, step = 20444 (190.293 sec)
+INFO:tensorflow:global_step/sec: 0.533248
+INFO:tensorflow:loss = 0.00084291666, step = 20544 (187.530 sec)
+INFO:tensorflow:global_step/sec: 0.534244
+INFO:tensorflow:loss = 0.00047748932, step = 20644 (187.180 sec)
+INFO:tensorflow:Saving checkpoints for 20741 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529118
+INFO:tensorflow:loss = 0.0014153454, step = 20744 (188.994 sec)
+INFO:tensorflow:global_step/sec: 0.534641
+INFO:tensorflow:loss = 0.9440417, step = 20844 (187.042 sec)
+INFO:tensorflow:global_step/sec: 0.535684
+INFO:tensorflow:loss = 0.0034483685, step = 20944 (186.677 sec)
+INFO:tensorflow:global_step/sec: 0.535767
+INFO:tensorflow:loss = 0.000761317, step = 21044 (186.648 sec)
+INFO:tensorflow:Saving checkpoints for 21062 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529645
+INFO:tensorflow:loss = 0.00058436295, step = 21144 (188.806 sec)
+INFO:tensorflow:global_step/sec: 0.535125
+INFO:tensorflow:loss = 0.7351859, step = 21244 (186.872 sec)
+INFO:tensorflow:global_step/sec: 0.535299
+INFO:tensorflow:loss = 7.1954935e-05, step = 21344 (186.812 sec)
+INFO:tensorflow:Saving checkpoints for 21383 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529237
+INFO:tensorflow:loss = 0.0002020041, step = 21444 (188.951 sec)
+INFO:tensorflow:global_step/sec: 0.535641
+INFO:tensorflow:loss = 0.00015352404, step = 21544 (186.692 sec)
+INFO:tensorflow:global_step/sec: 0.535757
+INFO:tensorflow:loss = 0.00056522107, step = 21644 (186.652 sec)
+INFO:tensorflow:Saving checkpoints for 21704 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529425
+INFO:tensorflow:loss = 8.9287474e-05, step = 21744 (188.884 sec)
+INFO:tensorflow:global_step/sec: 0.535912
+INFO:tensorflow:loss = 0.00049806497, step = 21844 (186.598 sec)
+INFO:tensorflow:global_step/sec: 0.535596
+INFO:tensorflow:loss = 0.0003663926, step = 21944 (186.708 sec)
+INFO:tensorflow:Saving checkpoints for 22025 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.530527
+INFO:tensorflow:loss = 0.00033808028, step = 22044 (188.492 sec)
+INFO:tensorflow:global_step/sec: 0.536389
+INFO:tensorflow:loss = 0.00047284662, step = 22144 (186.432 sec)
+INFO:tensorflow:global_step/sec: 0.536301
+INFO:tensorflow:loss = 0.0006741403, step = 22244 (186.463 sec)
+INFO:tensorflow:global_step/sec: 0.535684
+INFO:tensorflow:loss = 0.00071330194, step = 22344 (186.677 sec)
+INFO:tensorflow:Saving checkpoints for 22346 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.530689
+INFO:tensorflow:loss = 0.00075818715, step = 22444 (188.434 sec)
+INFO:tensorflow:global_step/sec: 0.53514
+INFO:tensorflow:loss = 0.00036527065, step = 22544 (186.867 sec)
+INFO:tensorflow:global_step/sec: 0.536804
+INFO:tensorflow:loss = 0.0014068644, step = 22644 (186.288 sec)
+INFO:tensorflow:Saving checkpoints for 22667 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.529837
+INFO:tensorflow:loss = 0.0009270924, step = 22744 (188.737 sec)
+INFO:tensorflow:global_step/sec: 0.535545
+INFO:tensorflow:loss = 0.00029387645, step = 22844 (186.726 sec)
+INFO:tensorflow:global_step/sec: 0.536698
+INFO:tensorflow:loss = 0.0003521065, step = 22944 (186.324 sec)
+INFO:tensorflow:Saving checkpoints for 22988 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528292
+INFO:tensorflow:loss = 0.00064659514, step = 23044 (189.289 sec)
+INFO:tensorflow:global_step/sec: 0.535537
+INFO:tensorflow:loss = 0.00017393893, step = 23144 (186.728 sec)
+INFO:tensorflow:global_step/sec: 0.534486
+INFO:tensorflow:loss = 0.00022843381, step = 23244 (187.095 sec)
+INFO:tensorflow:Saving checkpoints for 23308 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528462
+INFO:tensorflow:loss = 0.00022673712, step = 23344 (189.228 sec)
+INFO:tensorflow:global_step/sec: 0.533734
+INFO:tensorflow:loss = 0.0003172743, step = 23444 (187.359 sec)
+INFO:tensorflow:global_step/sec: 0.534433
+INFO:tensorflow:loss = 0.0002808841, step = 23544 (187.114 sec)
+INFO:tensorflow:Saving checkpoints for 23628 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528215
+INFO:tensorflow:loss = 0.00056798314, step = 23644 (189.317 sec)
+INFO:tensorflow:global_step/sec: 0.535094
+INFO:tensorflow:loss = 0.00020318216, step = 23744 (186.883 sec)
+INFO:tensorflow:global_step/sec: 0.534305
+INFO:tensorflow:loss = 0.0004076815, step = 23844 (187.159 sec)
+INFO:tensorflow:global_step/sec: 0.534274
+INFO:tensorflow:loss = 0.0003858381, step = 23944 (187.170 sec)
+INFO:tensorflow:Saving checkpoints for 23948 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.52849
+INFO:tensorflow:loss = 7.092692e-05, step = 24044 (189.218 sec)
+INFO:tensorflow:global_step/sec: 0.534548
+INFO:tensorflow:loss = 0.0009604021, step = 24144 (187.074 sec)
+INFO:tensorflow:global_step/sec: 0.533965
+INFO:tensorflow:loss = 0.0005273881, step = 24244 (187.278 sec)
+INFO:tensorflow:Saving checkpoints for 24268 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528903
+INFO:tensorflow:loss = 0.00078435737, step = 24344 (189.071 sec)
+INFO:tensorflow:global_step/sec: 0.532266
+INFO:tensorflow:loss = 0.0006234112, step = 24444 (187.876 sec)
+INFO:tensorflow:global_step/sec: 0.532974
+INFO:tensorflow:loss = 0.00070210564, step = 24544 (187.626 sec)
+INFO:tensorflow:Saving checkpoints for 24587 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527806
+INFO:tensorflow:loss = 0.0006090568, step = 24644 (189.464 sec)
+INFO:tensorflow:global_step/sec: 0.534698
+INFO:tensorflow:loss = 0.0006226803, step = 24744 (187.021 sec)
+INFO:tensorflow:global_step/sec: 0.533917
+INFO:tensorflow:loss = 0.00077152, step = 24844 (187.295 sec)
+INFO:tensorflow:Saving checkpoints for 24907 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.528916
+INFO:tensorflow:loss = 0.000413606, step = 24944 (189.066 sec)
+INFO:tensorflow:global_step/sec: 0.532154
+INFO:tensorflow:loss = 0.00023010501, step = 25044 (187.915 sec)
+INFO:tensorflow:global_step/sec: 0.53086
+INFO:tensorflow:loss = 0.0001986098, step = 25144 (188.374 sec)
+INFO:tensorflow:Saving checkpoints for 25226 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526422
+INFO:tensorflow:loss = 0.00025523195, step = 25244 (189.961 sec)
+INFO:tensorflow:global_step/sec: 0.532254
+INFO:tensorflow:loss = 0.00021091265, step = 25344 (187.880 sec)
+INFO:tensorflow:global_step/sec: 0.531954
+INFO:tensorflow:loss = 0.0003476808, step = 25444 (187.986 sec)
+INFO:tensorflow:global_step/sec: 0.531779
+INFO:tensorflow:loss = 0.00016952216, step = 25544 (188.048 sec)
+INFO:tensorflow:Saving checkpoints for 25545 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527038
+INFO:tensorflow:loss = 0.00041529996, step = 25644 (189.740 sec)
+INFO:tensorflow:global_step/sec: 0.534234
+INFO:tensorflow:loss = 0.00016720465, step = 25744 (187.184 sec)
+INFO:tensorflow:global_step/sec: 0.533407
+INFO:tensorflow:loss = 0.00016320989, step = 25844 (187.474 sec)
+INFO:tensorflow:Saving checkpoints for 25865 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.527418
+INFO:tensorflow:loss = 0.0014301763, step = 25944 (189.603 sec)
+INFO:tensorflow:global_step/sec: 0.532743
+INFO:tensorflow:loss = 0.00031098022, step = 26044 (187.708 sec)
+INFO:tensorflow:global_step/sec: 0.530864
+INFO:tensorflow:loss = 0.0006426375, step = 26144 (188.372 sec)
+INFO:tensorflow:Saving checkpoints for 26184 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526449
+INFO:tensorflow:loss = 0.6536928, step = 26244 (189.952 sec)
+INFO:tensorflow:global_step/sec: 0.531078
+INFO:tensorflow:loss = 0.00021029261, step = 26344 (188.296 sec)
+INFO:tensorflow:global_step/sec: 0.531394
+INFO:tensorflow:loss = 0.00041782318, step = 26444 (188.184 sec)
+INFO:tensorflow:Saving checkpoints for 26502 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525304
+INFO:tensorflow:loss = 0.00030209028, step = 26544 (190.366 sec)
+INFO:tensorflow:global_step/sec: 0.531287
+INFO:tensorflow:loss = 0.0010721708, step = 26644 (188.222 sec)
+INFO:tensorflow:global_step/sec: 0.53152
+INFO:tensorflow:loss = 0.00015948874, step = 26744 (188.140 sec)
+INFO:tensorflow:Saving checkpoints for 26820 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525557
+INFO:tensorflow:loss = 0.0002602715, step = 26844 (190.274 sec)
+INFO:tensorflow:global_step/sec: 0.53039
+INFO:tensorflow:loss = 0.000507435, step = 26944 (188.541 sec)
+INFO:tensorflow:global_step/sec: 0.530663
+INFO:tensorflow:loss = 0.00045376585, step = 27044 (188.443 sec)
+INFO:tensorflow:Saving checkpoints for 27138 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.52455
+INFO:tensorflow:loss = 0.00017555528, step = 27144 (190.640 sec)
+INFO:tensorflow:global_step/sec: 0.529675
+INFO:tensorflow:loss = 3.8280312e-05, step = 27244 (188.795 sec)
+INFO:tensorflow:global_step/sec: 0.52935
+INFO:tensorflow:loss = 0.00031061305, step = 27344 (188.911 sec)
+INFO:tensorflow:global_step/sec: 0.530225
+INFO:tensorflow:loss = 0.00015080183, step = 27444 (188.599 sec)
+INFO:tensorflow:Saving checkpoints for 27455 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524364
+INFO:tensorflow:loss = 2.723894e-05, step = 27544 (190.707 sec)
+INFO:tensorflow:global_step/sec: 0.530903
+INFO:tensorflow:loss = 0.00048693756, step = 27644 (188.358 sec)
+INFO:tensorflow:global_step/sec: 0.529584
+INFO:tensorflow:loss = 0.9219105, step = 27744 (188.828 sec)
+INFO:tensorflow:Saving checkpoints for 27773 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525551
+INFO:tensorflow:loss = 0.0007919182, step = 27844 (190.276 sec)
+INFO:tensorflow:global_step/sec: 0.531116
+INFO:tensorflow:loss = 0.0011073912, step = 27944 (188.283 sec)
+INFO:tensorflow:global_step/sec: 0.5315
+INFO:tensorflow:loss = 0.00095347257, step = 28044 (188.147 sec)
+INFO:tensorflow:Saving checkpoints for 28091 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525983
+INFO:tensorflow:loss = 0.0005024629, step = 28144 (190.120 sec)
+INFO:tensorflow:global_step/sec: 0.531582
+INFO:tensorflow:loss = 0.0003839538, step = 28244 (188.118 sec)
+INFO:tensorflow:global_step/sec: 0.530988
+INFO:tensorflow:loss = 0.00050623814, step = 28344 (188.328 sec)
+INFO:tensorflow:Saving checkpoints for 28409 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525866
+INFO:tensorflow:loss = 0.00051683735, step = 28444 (190.162 sec)
+INFO:tensorflow:global_step/sec: 0.532247
+INFO:tensorflow:loss = 0.00022612771, step = 28544 (187.883 sec)
+INFO:tensorflow:global_step/sec: 0.530853
+INFO:tensorflow:loss = 0.00030238973, step = 28644 (188.376 sec)
+INFO:tensorflow:Saving checkpoints for 28727 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525694
+INFO:tensorflow:loss = 0.0004723769, step = 28744 (190.225 sec)
+INFO:tensorflow:global_step/sec: 0.531301
+INFO:tensorflow:loss = 0.00041299293, step = 28844 (188.217 sec)
+INFO:tensorflow:global_step/sec: 0.532149
+INFO:tensorflow:loss = 0.00029886907, step = 28944 (187.917 sec)
+INFO:tensorflow:global_step/sec: 0.5325
+INFO:tensorflow:loss = 0.0001920957, step = 29044 (187.793 sec)
+INFO:tensorflow:Saving checkpoints for 29046 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525649
+INFO:tensorflow:loss = 0.0001828682, step = 29144 (190.241 sec)
+INFO:tensorflow:global_step/sec: 0.531799
+INFO:tensorflow:loss = 0.0017777182, step = 29244 (188.041 sec)
+INFO:tensorflow:global_step/sec: 0.531276
+INFO:tensorflow:loss = 7.560552e-05, step = 29344 (188.226 sec)
+INFO:tensorflow:Saving checkpoints for 29364 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526344
+INFO:tensorflow:loss = 0.00033973993, step = 29444 (189.990 sec)
+INFO:tensorflow:global_step/sec: 0.531156
+INFO:tensorflow:loss = 0.00041805772, step = 29544 (188.269 sec)
+INFO:tensorflow:global_step/sec: 0.530075
+INFO:tensorflow:loss = 0.0014321143, step = 29644 (188.652 sec)
+INFO:tensorflow:Saving checkpoints for 29682 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525881
+INFO:tensorflow:loss = 0.001030952, step = 29744 (190.157 sec)
+INFO:tensorflow:global_step/sec: 0.531069
+INFO:tensorflow:loss = 0.0009817235, step = 29844 (188.299 sec)
+INFO:tensorflow:global_step/sec: 0.531235
+INFO:tensorflow:loss = 0.0008168578, step = 29944 (188.241 sec)
+INFO:tensorflow:Saving checkpoints for 30000 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525992
+INFO:tensorflow:loss = 0.00043835363, step = 30044 (190.117 sec)
+INFO:tensorflow:global_step/sec: 0.531486
+INFO:tensorflow:loss = 0.00062860013, step = 30144 (188.152 sec)
+INFO:tensorflow:global_step/sec: 0.530946
+INFO:tensorflow:loss = 0.0006072682, step = 30244 (188.343 sec)
+INFO:tensorflow:Saving checkpoints for 30318 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525539
+INFO:tensorflow:loss = 0.0004929947, step = 30344 (190.281 sec)
+INFO:tensorflow:global_step/sec: 0.532075
+INFO:tensorflow:loss = 0.0003246268, step = 30444 (187.944 sec)
+INFO:tensorflow:global_step/sec: 0.532701
+INFO:tensorflow:loss = 0.0003224878, step = 30544 (187.723 sec)
+INFO:tensorflow:Saving checkpoints for 30637 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526441
+INFO:tensorflow:loss = 0.00036119056, step = 30644 (189.955 sec)
+INFO:tensorflow:global_step/sec: 0.531302
+INFO:tensorflow:loss = 9.883412e-05, step = 30744 (188.217 sec)
+INFO:tensorflow:global_step/sec: 0.531118
+INFO:tensorflow:loss = 0.6131304, step = 30844 (188.282 sec)
+INFO:tensorflow:global_step/sec: 0.531262
+INFO:tensorflow:loss = 0.00010533063, step = 30944 (188.231 sec)
+INFO:tensorflow:Saving checkpoints for 30955 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524149
+INFO:tensorflow:loss = 0.00019134954, step = 31044 (190.785 sec)
+INFO:tensorflow:global_step/sec: 0.530746
+INFO:tensorflow:loss = 0.00012770428, step = 31144 (188.414 sec)
+INFO:tensorflow:global_step/sec: 0.530597
+INFO:tensorflow:loss = 0.000115737384, step = 31244 (188.467 sec)
+INFO:tensorflow:Saving checkpoints for 31273 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.52457
+INFO:tensorflow:loss = 5.826181e-05, step = 31344 (190.632 sec)
+INFO:tensorflow:global_step/sec: 0.530412
+INFO:tensorflow:loss = 0.00023642113, step = 31444 (188.533 sec)
+INFO:tensorflow:global_step/sec: 0.531005
+INFO:tensorflow:loss = 0.0003618944, step = 31544 (188.322 sec)
+INFO:tensorflow:Saving checkpoints for 31591 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524969
+INFO:tensorflow:loss = 0.00029912984, step = 31644 (190.487 sec)
+INFO:tensorflow:global_step/sec: 0.53104
+INFO:tensorflow:loss = 0.00027174287, step = 31744 (188.310 sec)
+INFO:tensorflow:global_step/sec: 0.530245
+INFO:tensorflow:loss = 0.00019092481, step = 31844 (188.592 sec)
+INFO:tensorflow:Saving checkpoints for 31909 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524698
+INFO:tensorflow:loss = 0.00046136894, step = 31944 (190.586 sec)
+INFO:tensorflow:global_step/sec: 0.531087
+INFO:tensorflow:loss = 0.00018219335, step = 32044 (188.293 sec)
+INFO:tensorflow:global_step/sec: 0.531531
+INFO:tensorflow:loss = 0.00016965909, step = 32144 (188.136 sec)
+INFO:tensorflow:Saving checkpoints for 32227 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525615
+INFO:tensorflow:loss = 0.00025742233, step = 32244 (190.253 sec)
+INFO:tensorflow:global_step/sec: 0.530609
+INFO:tensorflow:loss = 8.2608545e-05, step = 32344 (188.463 sec)
+INFO:tensorflow:global_step/sec: 0.530378
+INFO:tensorflow:loss = 0.00011259697, step = 32444 (188.545 sec)
+INFO:tensorflow:global_step/sec: 0.53142
+INFO:tensorflow:loss = 0.00026426194, step = 32544 (188.175 sec)
+INFO:tensorflow:Saving checkpoints for 32545 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525816
+INFO:tensorflow:loss = 0.00010732298, step = 32644 (190.181 sec)
+INFO:tensorflow:global_step/sec: 0.531447
+INFO:tensorflow:loss = 0.00016636417, step = 32744 (188.166 sec)
+INFO:tensorflow:global_step/sec: 0.531658
+INFO:tensorflow:loss = 0.00046717314, step = 32844 (188.091 sec)
+INFO:tensorflow:Saving checkpoints for 32863 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525358
+INFO:tensorflow:loss = 0.00017537881, step = 32944 (190.347 sec)
+INFO:tensorflow:global_step/sec: 0.531484
+INFO:tensorflow:loss = 0.00016715337, step = 33044 (188.152 sec)
+INFO:tensorflow:global_step/sec: 0.530101
+INFO:tensorflow:loss = 0.00021389258, step = 33144 (188.643 sec)
+INFO:tensorflow:Saving checkpoints for 33181 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525649
+INFO:tensorflow:loss = 0.0001715654, step = 33244 (190.241 sec)
+INFO:tensorflow:global_step/sec: 0.531891
+INFO:tensorflow:loss = 0.00017734818, step = 33344 (188.009 sec)
+INFO:tensorflow:global_step/sec: 0.530861
+INFO:tensorflow:loss = 0.00019610723, step = 33444 (188.373 sec)
+INFO:tensorflow:Saving checkpoints for 33499 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.523859
+INFO:tensorflow:loss = 0.00016531383, step = 33544 (190.891 sec)
+INFO:tensorflow:global_step/sec: 0.530799
+INFO:tensorflow:loss = 0.00018043055, step = 33644 (188.395 sec)
+INFO:tensorflow:global_step/sec: 0.530312
+INFO:tensorflow:loss = 0.00021667533, step = 33744 (188.568 sec)
+INFO:tensorflow:Saving checkpoints for 33817 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524727
+INFO:tensorflow:loss = 0.00015053034, step = 33844 (190.575 sec)
+INFO:tensorflow:global_step/sec: 0.531909
+INFO:tensorflow:loss = 0.00017049373, step = 33944 (188.002 sec)
+INFO:tensorflow:global_step/sec: 0.532046
+INFO:tensorflow:loss = 0.0002241502, step = 34044 (187.954 sec)
+INFO:tensorflow:Saving checkpoints for 34136 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525819
+INFO:tensorflow:loss = 0.00021103203, step = 34144 (190.179 sec)
+INFO:tensorflow:global_step/sec: 0.530593
+INFO:tensorflow:loss = 0.00012952372, step = 34244 (188.468 sec)
+INFO:tensorflow:global_step/sec: 0.531604
+INFO:tensorflow:loss = 0.00015263312, step = 34344 (188.110 sec)
+INFO:tensorflow:global_step/sec: 0.530809
+INFO:tensorflow:loss = 8.228065e-05, step = 34444 (188.392 sec)
+INFO:tensorflow:Saving checkpoints for 34454 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.526394
+INFO:tensorflow:loss = 0.00014871193, step = 34544 (189.972 sec)
+INFO:tensorflow:global_step/sec: 0.531757
+INFO:tensorflow:loss = 6.41921e-05, step = 34644 (188.056 sec)
+INFO:tensorflow:global_step/sec: 0.530662
+INFO:tensorflow:loss = 0.00014108121, step = 34744 (188.444 sec)
+INFO:tensorflow:Saving checkpoints for 34772 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524392
+INFO:tensorflow:loss = 0.000108099746, step = 34844 (190.697 sec)
+INFO:tensorflow:global_step/sec: 0.530415
+INFO:tensorflow:loss = 9.6865464e-05, step = 34944 (188.532 sec)
+INFO:tensorflow:global_step/sec: 0.530346
+INFO:tensorflow:loss = 1.1855069, step = 35044 (188.556 sec)
+INFO:tensorflow:Saving checkpoints for 35090 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524308
+INFO:tensorflow:loss = 0.00012483259, step = 35144 (190.728 sec)
+INFO:tensorflow:global_step/sec: 0.530521
+INFO:tensorflow:loss = 0.00021351855, step = 35244 (188.494 sec)
+INFO:tensorflow:global_step/sec: 0.53073
+INFO:tensorflow:loss = 0.00012252323, step = 35344 (188.420 sec)
+INFO:tensorflow:Saving checkpoints for 35408 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524202
+INFO:tensorflow:loss = 0.00011681719, step = 35444 (190.766 sec)
+INFO:tensorflow:global_step/sec: 0.531366
+INFO:tensorflow:loss = 0.00018264551, step = 35544 (188.194 sec)
+INFO:tensorflow:global_step/sec: 0.530178
+INFO:tensorflow:loss = 0.00012289196, step = 35644 (188.616 sec)
+INFO:tensorflow:Saving checkpoints for 35726 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.524692
+INFO:tensorflow:loss = 8.783837e-05, step = 35744 (190.588 sec)
+INFO:tensorflow:global_step/sec: 0.531918
+INFO:tensorflow:loss = 0.000107669395, step = 35844 (187.999 sec)
+INFO:tensorflow:global_step/sec: 0.531847
+INFO:tensorflow:loss = 0.00011403035, step = 35944 (188.024 sec)
+INFO:tensorflow:global_step/sec: 0.531946
+INFO:tensorflow:loss = 0.00012176043, step = 36044 (187.989 sec)
+INFO:tensorflow:Saving checkpoints for 36045 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525248
+INFO:tensorflow:loss = 8.2459366e-05, step = 36144 (190.386 sec)
+INFO:tensorflow:global_step/sec: 0.531757
+INFO:tensorflow:loss = 8.473877e-05, step = 36244 (188.056 sec)
+INFO:tensorflow:global_step/sec: 0.531754
+INFO:tensorflow:loss = 0.00013357594, step = 36344 (188.057 sec)
+INFO:tensorflow:Saving checkpoints for 36363 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:global_step/sec: 0.525803
+INFO:tensorflow:loss = 0.00012563702, step = 36444 (190.185 sec)
+INFO:tensorflow:Saving checkpoints for 36487 into /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt.
+INFO:tensorflow:Loss for final step: 0.00012948032.
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7faa9630fb38>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Writing example 0 of 9117
+INFO:tensorflow:Using config: {'_model_dir': '/home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.8
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7faa646455f8>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:*** Features ***
+INFO:tensorflow:  name = input_ids, shape = (?, 55)
+INFO:tensorflow:  name = input_mask, shape = (?, 55)
+INFO:tensorflow:  name = label_ids, shape = (?,)
+INFO:tensorflow:  name = segment_ids, shape = (?, 55)
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/ops/metrics_impl.py:455: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2020-07-25T13:04:54Z
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt-36487
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2020-07-25-13:11:42
+INFO:tensorflow:Saving dict for global step 36487: eval_accuracy = 0.8423824, eval_auc = 0.748073, eval_loss = 1.3039448, global_step = 36487, loss = 1.3041313
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 36487: /home/gsq/ccks20/bert-kbqa-NLPCC2017/AttributeMap-BERT-Classification/chinese_L-12_H-768_A-12/tmp/result2/model.ckpt-36487
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+

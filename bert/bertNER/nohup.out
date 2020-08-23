@@ -1,0 +1,2184 @@
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+2020-08-02 16:49:02,670 - log/train.log - INFO - num_tags       :	9
+2020-08-02 16:49:02,670 - log/train.log - INFO - lstm_dim       :	200
+2020-08-02 16:49:02,670 - log/train.log - INFO - batch_size     :	32
+2020-08-02 16:49:02,670 - log/train.log - INFO - max_seq_len    :	128
+2020-08-02 16:49:02,671 - log/train.log - INFO - clip           :	5.0
+2020-08-02 16:49:02,671 - log/train.log - INFO - dropout_keep   :	0.5
+2020-08-02 16:49:02,671 - log/train.log - INFO - optimizer      :	adam
+2020-08-02 16:49:02,671 - log/train.log - INFO - lr             :	0.001
+2020-08-02 16:49:02,671 - log/train.log - INFO - tag_schema     :	iob
+2020-08-02 16:49:02,671 - log/train.log - INFO - zeros          :	False
+2020-08-02 16:49:02,671 - log/train.log - INFO - lower          :	True
+2020-08-02 16:49:02.672065: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-08-02 16:49:02.678108: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2398845000 Hz
+2020-08-02 16:49:02.678930: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5633bd08a3c0 executing computations on platform Host. Devices:
+2020-08-02 16:49:02.678959: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/gsq/ccks20/bert/bertNER/bert/modeling.py:358: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/gsq/ccks20/bert/bertNER/bert/modeling.py:671: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /home/gsq/ccks20/bert/bertNER/model.py:124: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/ops/rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/ops/rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Found 9 unique named entity tags
+20864 / 0 / 4636 sentences in train / dev / test.
+**** Trainable Variables ****
+  name = %s, shape = %s%s bert/embeddings/word_embeddings:0 (21128, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/embeddings/token_type_embeddings:0 (2, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/embeddings/position_embeddings:0 (512, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/embeddings/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/embeddings/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/ops/gradients_impl.py:110: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+2020-08-02 16:49:08,567 - log/train.log - INFO - Created model with fresh parameters.
+2020-08-02 16:49:09,271 - log/train.log - INFO - start training
+2020-08-02 16:57:41,523 - log/train.log - INFO - iteration:1 step:100/652, NER loss:11.178215
+2020-08-02 17:06:15,890 - log/train.log - INFO - iteration:1 step:200/652, NER loss: 4.226810
+2020-08-02 17:14:46,840 - log/train.log - INFO - iteration:1 step:300/652, NER loss: 3.484038
+2020-08-02 17:23:21,364 - log/train.log - INFO - iteration:1 step:400/652, NER loss: 3.113673
+2020-08-02 17:31:52,665 - log/train.log - INFO - iteration:1 step:500/652, NER loss: 2.689328
+2020-08-02 17:40:27,657 - log/train.log - INFO - iteration:1 step:600/652, NER loss: 2.201827
+2020-08-02 17:44:54,630 - log/train.log - INFO - evaluate:dev
+2020-08-02 17:51:07,323 - log/train.log - INFO - processed 106932 tokens with 3661 phrases; found: 3666 phrases; correct: 3226.
+
+2020-08-02 17:51:07,323 - log/train.log - INFO - accuracy:  98.75%; precision:  88.00%; recall:  88.12%; FB1:  88.06
+
+2020-08-02 17:51:07,323 - log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  3
+
+2020-08-02 17:51:07,323 - log/train.log - INFO -               LOC: precision:  89.66%; recall:  87.22%; FB1:  88.42  1750
+
+2020-08-02 17:51:07,323 - log/train.log - INFO -               ORG: precision:  80.97%; recall:  83.71%; FB1:  82.32  1009
+
+2020-08-02 17:51:07,323 - log/train.log - INFO -               PER: precision:  92.92%; recall:  95.24%; FB1:  94.06  904
+
+2020-08-02 17:51:07,587 - log/train.log - INFO - new best dev f1 score:88.060
+2020-08-02 17:51:08,612 - log/train.log - INFO - model saved
+2020-08-02 17:51:08,612 - log/train.log - INFO - evaluate:test
+2020-08-02 18:03:31,225 - log/train.log - INFO - processed 214621 tokens with 7456 phrases; found: 7469 phrases; correct: 6542.
+
+2020-08-02 18:03:31,225 - log/train.log - INFO - accuracy:  98.63%; precision:  87.59%; recall:  87.74%; FB1:  87.66
+
+2020-08-02 18:03:31,226 - log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  3
+
+2020-08-02 18:03:31,226 - log/train.log - INFO -               LOC: precision:  88.56%; recall:  87.41%; FB1:  87.98  3419
+
+2020-08-02 18:03:31,226 - log/train.log - INFO -               ORG: precision:  81.34%; recall:  82.69%; FB1:  82.01  2202
+
+2020-08-02 18:03:31,226 - log/train.log - INFO -               PER: precision:  93.39%; recall:  94.67%; FB1:  94.02  1845
+
+2020-08-02 18:03:31,493 - log/train.log - INFO - new best test f1 score:87.660
+2020-08-02 18:07:36,607 - log/train.log - INFO - iteration:2 step:48/652, NER loss: 2.099176
+2020-08-02 18:16:07,129 - log/train.log - INFO - iteration:2 step:148/652, NER loss: 1.926374
+2020-08-02 18:24:37,848 - log/train.log - INFO - iteration:2 step:248/652, NER loss: 1.697476
+2020-08-02 18:33:07,899 - log/train.log - INFO - iteration:2 step:348/652, NER loss: 1.782944
+2020-08-02 18:41:37,927 - log/train.log - INFO - iteration:2 step:448/652, NER loss: 1.544655
+2020-08-02 18:50:09,114 - log/train.log - INFO - iteration:2 step:548/652, NER loss: 1.598866
+2020-08-02 18:58:38,897 - log/train.log - INFO - iteration:2 step:648/652, NER loss: 1.391769
+2020-08-02 18:58:59,231 - log/train.log - INFO - evaluate:dev
+2020-08-02 19:05:08,100 - log/train.log - INFO - processed 106932 tokens with 3661 phrases; found: 3635 phrases; correct: 3301.
+
+2020-08-02 19:05:08,100 - log/train.log - INFO - accuracy:  98.90%; precision:  90.81%; recall:  90.17%; FB1:  90.49
+
+2020-08-02 19:05:08,100 - log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  4
+
+2020-08-02 19:05:08,100 - log/train.log - INFO -               LOC: precision:  88.47%; recall:  91.27%; FB1:  89.85  1856
+
+2020-08-02 19:05:08,100 - log/train.log - INFO -               ORG: precision:  89.80%; recall:  82.99%; FB1:  86.26  902
+
+2020-08-02 19:05:08,100 - log/train.log - INFO -               PER: precision:  97.25%; recall:  96.26%; FB1:  96.75  873
+
+2020-08-02 19:05:08,303 - log/train.log - INFO - new best dev f1 score:90.490
+2020-08-02 19:05:09,081 - log/train.log - INFO - model saved
+2020-08-02 19:05:09,081 - log/train.log - INFO - evaluate:test
+2020-08-02 19:17:21,482 - log/train.log - INFO - processed 214621 tokens with 7456 phrases; found: 7386 phrases; correct: 6662.
+
+2020-08-02 19:17:21,482 - log/train.log - INFO - accuracy:  98.76%; precision:  90.20%; recall:  89.35%; FB1:  89.77
+
+2020-08-02 19:17:21,482 - log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  3
+
+2020-08-02 19:17:21,482 - log/train.log - INFO -               LOC: precision:  88.59%; recall:  91.43%; FB1:  89.98  3575
+
+2020-08-02 19:17:21,482 - log/train.log - INFO -               ORG: precision:  88.10%; recall:  81.72%; FB1:  84.79  2009
+
+2020-08-02 19:17:21,482 - log/train.log - INFO -               PER: precision:  95.89%; recall:  94.78%; FB1:  95.33  1799
+
+2020-08-02 19:17:21,675 - log/train.log - INFO - new best test f1 score:89.770
+2020-08-02 19:25:29,599 - log/train.log - INFO - iteration:3 step:96/652, NER loss: 1.201485
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+2020-08-02 21:21:55,932 - log/train.log - INFO - num_tags       :	5
+2020-08-02 21:21:55,932 - log/train.log - INFO - lstm_dim       :	200
+2020-08-02 21:21:55,932 - log/train.log - INFO - batch_size     :	32
+2020-08-02 21:21:55,932 - log/train.log - INFO - max_seq_len    :	128
+2020-08-02 21:21:55,932 - log/train.log - INFO - clip           :	5.0
+2020-08-02 21:21:55,932 - log/train.log - INFO - dropout_keep   :	0.5
+2020-08-02 21:21:55,933 - log/train.log - INFO - optimizer      :	adam
+2020-08-02 21:21:55,933 - log/train.log - INFO - lr             :	0.001
+2020-08-02 21:21:55,933 - log/train.log - INFO - tag_schema     :	iob
+2020-08-02 21:21:55,933 - log/train.log - INFO - zeros          :	False
+2020-08-02 21:21:55,933 - log/train.log - INFO - lower          :	True
+2020-08-02 21:21:55.933887: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-08-02 21:21:55.939716: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2398845000 Hz
+2020-08-02 21:21:55.940868: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5591d7a8e7c0 executing computations on platform Host. Devices:
+2020-08-02 21:21:55.940903: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/gsq/ccks20/bert/bertNER/bert/modeling.py:358: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/gsq/ccks20/bert/bertNER/bert/modeling.py:671: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /home/gsq/ccks20/bert/bertNER/model.py:124: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/ops/rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/ops/rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Found 5 unique named entity tags
+4679 / 0 / 432 sentences in train / dev / test.
+**** Trainable Variables ****
+  name = %s, shape = %s%s bert/embeddings/word_embeddings:0 (21128, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/embeddings/token_type_embeddings:0 (2, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/embeddings/position_embeddings:0 (512, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/embeddings/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/embeddings/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_0/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_1/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_2/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_3/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_4/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_5/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_6/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_7/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_8/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s/home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/ops/gradients_impl.py:110: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+2020-08-02 21:22:01,981 - log/train.log - INFO - Created model with fresh parameters.
+2020-08-02 21:22:02,719 - log/train.log - INFO - start training
+2020-08-02 21:30:22,629 - log/train.log - INFO - iteration:1 step:100/147, NER loss: 7.869390
+2020-08-02 21:34:18,413 - log/train.log - INFO - evaluate:dev
+2020-08-02 21:40:49,754 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3569 phrases; correct: 2145.
+
+2020-08-02 21:40:49,754 - log/train.log - INFO - accuracy:  89.93%; precision:  60.10%; recall:  72.32%; FB1:  65.65
+
+2020-08-02 21:40:49,754 - log/train.log - INFO -               LOC: precision:  60.10%; recall:  72.32%; FB1:  65.65  3569
+
+2020-08-02 21:40:50,016 - log/train.log - INFO - new best dev f1 score:65.650
+2020-08-02 21:40:50,962 - log/train.log - INFO - model saved
+2020-08-02 21:40:50,962 - log/train.log - INFO - evaluate:test
+2020-08-02 21:41:58,268 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 632 phrases; correct: 374.
+
+2020-08-02 21:41:58,268 - log/train.log - INFO - accuracy:  90.95%; precision:  59.18%; recall:  73.33%; FB1:  65.50
+
+2020-08-02 21:41:58,268 - log/train.log - INFO -                  : precision:   0.00%; recall:   0.00%; FB1:   0.00  1
+
+2020-08-02 21:41:58,268 - log/train.log - INFO -               LOC: precision:  59.27%; recall:  73.33%; FB1:  65.56  631
+
+2020-08-02 21:41:58,537 - log/train.log - INFO - new best test f1 score:65.500
+2020-08-02 21:46:24,452 - log/train.log - INFO - iteration:2 step:53/147, NER loss: 3.851831
+2020-08-02 21:54:12,386 - log/train.log - INFO - evaluate:dev
+2020-08-02 22:00:42,292 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3293 phrases; correct: 2350.
+
+2020-08-02 22:00:42,292 - log/train.log - INFO - accuracy:  91.77%; precision:  71.36%; recall:  79.23%; FB1:  75.09
+
+2020-08-02 22:00:42,292 - log/train.log - INFO -               LOC: precision:  71.36%; recall:  79.23%; FB1:  75.09  3293
+
+2020-08-02 22:00:42,502 - log/train.log - INFO - new best dev f1 score:75.090
+2020-08-02 22:00:43,267 - log/train.log - INFO - model saved
+2020-08-02 22:00:43,267 - log/train.log - INFO - evaluate:test
+2020-08-02 22:01:50,499 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 578 phrases; correct: 410.
+
+2020-08-02 22:01:50,499 - log/train.log - INFO - accuracy:  91.99%; precision:  70.93%; recall:  80.39%; FB1:  75.37
+
+2020-08-02 22:01:50,499 - log/train.log - INFO -               LOC: precision:  70.93%; recall:  80.39%; FB1:  75.37  578
+
+2020-08-02 22:01:50,701 - log/train.log - INFO - new best test f1 score:75.370
+2020-08-02 22:02:20,878 - log/train.log - INFO - iteration:3 step:6/147, NER loss: 3.985605
+2020-08-02 22:10:43,281 - log/train.log - INFO - iteration:3 step:106/147, NER loss: 2.979742
+2020-08-02 22:14:05,853 - log/train.log - INFO - evaluate:dev
+2020-08-02 22:20:37,473 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3018 phrases; correct: 2373.
+
+2020-08-02 22:20:37,473 - log/train.log - INFO - accuracy:  92.59%; precision:  78.63%; recall:  80.01%; FB1:  79.31
+
+2020-08-02 22:20:37,473 - log/train.log - INFO -               LOC: precision:  78.63%; recall:  80.01%; FB1:  79.31  3018
+
+2020-08-02 22:20:37,670 - log/train.log - INFO - new best dev f1 score:79.310
+2020-08-02 22:20:38,450 - log/train.log - INFO - model saved
+2020-08-02 22:20:38,450 - log/train.log - INFO - evaluate:test
+2020-08-02 22:21:46,026 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 519 phrases; correct: 422.
+
+2020-08-02 22:21:46,026 - log/train.log - INFO - accuracy:  93.10%; precision:  81.31%; recall:  82.75%; FB1:  82.02
+
+2020-08-02 22:21:46,026 - log/train.log - INFO -               LOC: precision:  81.31%; recall:  82.75%; FB1:  82.02  519
+
+2020-08-02 22:21:46,222 - log/train.log - INFO - new best test f1 score:82.020
+2020-08-02 22:26:39,478 - log/train.log - INFO - iteration:4 step:59/147, NER loss: 3.096409
+2020-08-02 22:34:02,958 - log/train.log - INFO - evaluate:dev
+2020-08-02 22:40:34,938 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3028 phrases; correct: 2464.
+
+2020-08-02 22:40:34,938 - log/train.log - INFO - accuracy:  93.19%; precision:  81.37%; recall:  83.07%; FB1:  82.22
+
+2020-08-02 22:40:34,938 - log/train.log - INFO -               LOC: precision:  81.37%; recall:  83.07%; FB1:  82.22  3028
+
+2020-08-02 22:40:35,137 - log/train.log - INFO - new best dev f1 score:82.220
+2020-08-02 22:40:35,874 - log/train.log - INFO - model saved
+2020-08-02 22:40:35,875 - log/train.log - INFO - evaluate:test
+2020-08-02 22:41:43,412 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 522 phrases; correct: 435.
+
+2020-08-02 22:41:43,412 - log/train.log - INFO - accuracy:  93.59%; precision:  83.33%; recall:  85.29%; FB1:  84.30
+
+2020-08-02 22:41:43,412 - log/train.log - INFO -               LOC: precision:  83.33%; recall:  85.29%; FB1:  84.30  522
+
+2020-08-02 22:41:43,611 - log/train.log - INFO - new best test f1 score:84.300
+2020-08-02 22:42:44,201 - log/train.log - INFO - iteration:5 step:12/147, NER loss: 2.436086
+2020-08-02 22:51:08,220 - log/train.log - INFO - iteration:5 step:112/147, NER loss: 2.215831
+2020-08-02 22:54:00,717 - log/train.log - INFO - evaluate:dev
+2020-08-02 23:00:32,616 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2933 phrases; correct: 2469.
+
+2020-08-02 23:00:32,616 - log/train.log - INFO - accuracy:  93.52%; precision:  84.18%; recall:  83.24%; FB1:  83.71
+
+2020-08-02 23:00:32,616 - log/train.log - INFO -               LOC: precision:  84.18%; recall:  83.24%; FB1:  83.71  2933
+
+2020-08-02 23:00:32,817 - log/train.log - INFO - new best dev f1 score:83.710
+2020-08-02 23:00:33,576 - log/train.log - INFO - model saved
+2020-08-02 23:00:33,576 - log/train.log - INFO - evaluate:test
+2020-08-02 23:01:41,151 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 513 phrases; correct: 432.
+
+2020-08-02 23:01:41,151 - log/train.log - INFO - accuracy:  93.62%; precision:  84.21%; recall:  84.71%; FB1:  84.46
+
+2020-08-02 23:01:41,151 - log/train.log - INFO -               LOC: precision:  84.21%; recall:  84.71%; FB1:  84.46  513
+
+2020-08-02 23:01:41,352 - log/train.log - INFO - new best test f1 score:84.460
+2020-08-02 23:07:04,826 - log/train.log - INFO - iteration:6 step:65/147, NER loss: 1.942917
+2020-08-02 23:13:58,321 - log/train.log - INFO - evaluate:dev
+2020-08-02 23:20:30,518 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2930 phrases; correct: 2497.
+
+2020-08-02 23:20:30,518 - log/train.log - INFO - accuracy:  93.87%; precision:  85.22%; recall:  84.19%; FB1:  84.70
+
+2020-08-02 23:20:30,518 - log/train.log - INFO -               LOC: precision:  85.22%; recall:  84.19%; FB1:  84.70  2930
+
+2020-08-02 23:20:30,720 - log/train.log - INFO - new best dev f1 score:84.700
+WARNING:tensorflow:From /home/gsq/anaconda3/envs/tensorflow/lib/python3.6/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2020-08-02 23:20:31,558 - log/train.log - INFO - model saved
+2020-08-02 23:20:31,558 - log/train.log - INFO - evaluate:test
+2020-08-02 23:21:39,240 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 502 phrases; correct: 442.
+
+2020-08-02 23:21:39,241 - log/train.log - INFO - accuracy:  94.86%; precision:  88.05%; recall:  86.67%; FB1:  87.35
+
+2020-08-02 23:21:39,241 - log/train.log - INFO -               LOC: precision:  88.05%; recall:  86.67%; FB1:  87.35  502
+
+2020-08-02 23:21:39,445 - log/train.log - INFO - new best test f1 score:87.350
+2020-08-02 23:23:06,102 - log/train.log - INFO - iteration:7 step:18/147, NER loss: 1.946722
+2020-08-02 23:31:30,678 - log/train.log - INFO - iteration:7 step:118/147, NER loss: 1.781872
+2020-08-02 23:33:57,014 - log/train.log - INFO - evaluate:dev
+2020-08-02 23:40:29,461 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2860 phrases; correct: 2500.
+
+2020-08-02 23:40:29,461 - log/train.log - INFO - accuracy:  94.14%; precision:  87.41%; recall:  84.29%; FB1:  85.82
+
+2020-08-02 23:40:29,461 - log/train.log - INFO -               LOC: precision:  87.41%; recall:  84.29%; FB1:  85.82  2860
+
+2020-08-02 23:40:29,665 - log/train.log - INFO - new best dev f1 score:85.820
+2020-08-02 23:40:30,466 - log/train.log - INFO - model saved
+2020-08-02 23:40:30,466 - log/train.log - INFO - evaluate:test
+2020-08-02 23:41:38,261 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 478 phrases; correct: 433.
+
+2020-08-02 23:41:38,261 - log/train.log - INFO - accuracy:  94.73%; precision:  90.59%; recall:  84.90%; FB1:  87.65
+
+2020-08-02 23:41:38,261 - log/train.log - INFO -               LOC: precision:  90.59%; recall:  84.90%; FB1:  87.65  478
+
+2020-08-02 23:41:38,467 - log/train.log - INFO - new best test f1 score:87.650
+2020-08-02 23:47:32,417 - log/train.log - INFO - iteration:8 step:71/147, NER loss: 1.603558
+2020-08-02 23:53:55,765 - log/train.log - INFO - evaluate:dev
+2020-08-03 00:00:28,140 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3008 phrases; correct: 2602.
+
+2020-08-03 00:00:28,140 - log/train.log - INFO - accuracy:  94.62%; precision:  86.50%; recall:  87.73%; FB1:  87.11
+
+2020-08-03 00:00:28,140 - log/train.log - INFO -               LOC: precision:  86.50%; recall:  87.73%; FB1:  87.11  3008
+
+2020-08-03 00:00:28,346 - log/train.log - INFO - new best dev f1 score:87.110
+2020-08-03 00:00:29,245 - log/train.log - INFO - model saved
+2020-08-03 00:00:29,245 - log/train.log - INFO - evaluate:test
+2020-08-03 00:01:36,865 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 510 phrases; correct: 458.
+
+2020-08-03 00:01:36,865 - log/train.log - INFO - accuracy:  95.41%; precision:  89.80%; recall:  89.80%; FB1:  89.80
+
+2020-08-03 00:01:36,865 - log/train.log - INFO -               LOC: precision:  89.80%; recall:  89.80%; FB1:  89.80  510
+
+2020-08-03 00:01:37,073 - log/train.log - INFO - new best test f1 score:89.800
+2020-08-03 00:03:38,016 - log/train.log - INFO - iteration:9 step:24/147, NER loss: 1.521198
+2020-08-03 00:11:58,132 - log/train.log - INFO - iteration:9 step:124/147, NER loss: 1.398418
+2020-08-03 00:13:54,155 - log/train.log - INFO - evaluate:dev
+2020-08-03 00:20:26,362 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2693 phrases; correct: 2451.
+
+2020-08-03 00:20:26,362 - log/train.log - INFO - accuracy:  94.34%; precision:  91.01%; recall:  82.64%; FB1:  86.62
+
+2020-08-03 00:20:26,362 - log/train.log - INFO -               LOC: precision:  91.01%; recall:  82.64%; FB1:  86.62  2693
+
+2020-08-03 00:20:26,363 - log/train.log - INFO - evaluate:test
+2020-08-03 00:21:34,041 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 464 phrases; correct: 428.
+
+2020-08-03 00:21:34,041 - log/train.log - INFO - accuracy:  94.60%; precision:  92.24%; recall:  83.92%; FB1:  87.89
+
+2020-08-03 00:21:34,042 - log/train.log - INFO -               LOC: precision:  92.24%; recall:  83.92%; FB1:  87.89  464
+
+2020-08-03 00:28:02,261 - log/train.log - INFO - iteration:10 step:77/147, NER loss: 1.383613
+2020-08-03 00:33:51,138 - log/train.log - INFO - evaluate:dev
+2020-08-03 00:40:23,059 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3148 phrases; correct: 2705.
+
+2020-08-03 00:40:23,059 - log/train.log - INFO - accuracy:  94.79%; precision:  85.93%; recall:  91.20%; FB1:  88.49
+
+2020-08-03 00:40:23,059 - log/train.log - INFO -               LOC: precision:  85.93%; recall:  91.20%; FB1:  88.49  3148
+
+2020-08-03 00:40:23,267 - log/train.log - INFO - new best dev f1 score:88.490
+2020-08-03 00:40:24,104 - log/train.log - INFO - model saved
+2020-08-03 00:40:24,105 - log/train.log - INFO - evaluate:test
+2020-08-03 00:41:31,692 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 535 phrases; correct: 468.
+
+2020-08-03 00:41:31,692 - log/train.log - INFO - accuracy:  95.59%; precision:  87.48%; recall:  91.76%; FB1:  89.57
+
+2020-08-03 00:41:31,692 - log/train.log - INFO -               LOC: precision:  87.48%; recall:  91.76%; FB1:  89.57  535
+
+2020-08-03 00:43:58,979 - log/train.log - INFO - iteration:11 step:30/147, NER loss: 1.326893
+2020-08-03 00:52:23,181 - log/train.log - INFO - iteration:11 step:130/147, NER loss: 1.159500
+2020-08-03 00:53:48,724 - log/train.log - INFO - evaluate:dev
+2020-08-03 01:00:20,927 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2771 phrases; correct: 2516.
+
+2020-08-03 01:00:20,927 - log/train.log - INFO - accuracy:  94.77%; precision:  90.80%; recall:  84.83%; FB1:  87.71
+
+2020-08-03 01:00:20,927 - log/train.log - INFO -               LOC: precision:  90.80%; recall:  84.83%; FB1:  87.71  2771
+
+2020-08-03 01:00:20,928 - log/train.log - INFO - evaluate:test
+2020-08-03 01:01:28,613 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 490 phrases; correct: 446.
+
+2020-08-03 01:01:28,613 - log/train.log - INFO - accuracy:  95.08%; precision:  91.02%; recall:  87.45%; FB1:  89.20
+
+2020-08-03 01:01:28,613 - log/train.log - INFO -               LOC: precision:  91.02%; recall:  87.45%; FB1:  89.20  490
+
+2020-08-03 01:08:27,659 - log/train.log - INFO - iteration:12 step:83/147, NER loss: 1.140544
+2020-08-03 01:13:46,446 - log/train.log - INFO - evaluate:dev
+2020-08-03 01:20:18,334 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2594 phrases; correct: 2428.
+
+2020-08-03 01:20:18,334 - log/train.log - INFO - accuracy:  94.65%; precision:  93.60%; recall:  81.86%; FB1:  87.34
+
+2020-08-03 01:20:18,334 - log/train.log - INFO -               LOC: precision:  93.60%; recall:  81.86%; FB1:  87.34  2594
+
+2020-08-03 01:20:18,335 - log/train.log - INFO - evaluate:test
+2020-08-03 01:21:25,999 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 453 phrases; correct: 434.
+
+2020-08-03 01:21:25,999 - log/train.log - INFO - accuracy:  95.61%; precision:  95.81%; recall:  85.10%; FB1:  90.13
+
+2020-08-03 01:21:25,999 - log/train.log - INFO -               LOC: precision:  95.81%; recall:  85.10%; FB1:  90.13  453
+
+2020-08-03 01:21:26,208 - log/train.log - INFO - new best test f1 score:90.130
+2020-08-03 01:24:23,918 - log/train.log - INFO - iteration:13 step:36/147, NER loss: 1.166493
+2020-08-03 01:32:48,346 - log/train.log - INFO - iteration:13 step:136/147, NER loss: 1.098662
+2020-08-03 01:33:43,829 - log/train.log - INFO - evaluate:dev
+2020-08-03 01:40:16,171 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2902 phrases; correct: 2626.
+
+2020-08-03 01:40:16,171 - log/train.log - INFO - accuracy:  95.25%; precision:  90.49%; recall:  88.54%; FB1:  89.50
+
+2020-08-03 01:40:16,171 - log/train.log - INFO -               LOC: precision:  90.49%; recall:  88.54%; FB1:  89.50  2902
+
+2020-08-03 01:40:16,380 - log/train.log - INFO - new best dev f1 score:89.500
+2020-08-03 01:40:17,217 - log/train.log - INFO - model saved
+2020-08-03 01:40:17,218 - log/train.log - INFO - evaluate:test
+2020-08-03 01:41:24,820 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 489 phrases; correct: 452.
+
+2020-08-03 01:41:24,820 - log/train.log - INFO - accuracy:  95.63%; precision:  92.43%; recall:  88.63%; FB1:  90.49
+
+2020-08-03 01:41:24,820 - log/train.log - INFO -               LOC: precision:  92.43%; recall:  88.63%; FB1:  90.49  489
+
+2020-08-03 01:41:25,032 - log/train.log - INFO - new best test f1 score:90.490
+2020-08-03 01:48:53,763 - log/train.log - INFO - iteration:14 step:89/147, NER loss: 0.934972
+2020-08-03 01:53:42,471 - log/train.log - INFO - evaluate:dev
+2020-08-03 02:00:15,175 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2705 phrases; correct: 2512.
+
+2020-08-03 02:00:15,175 - log/train.log - INFO - accuracy:  95.13%; precision:  92.87%; recall:  84.69%; FB1:  88.59
+
+2020-08-03 02:00:15,175 - log/train.log - INFO -               LOC: precision:  92.87%; recall:  84.69%; FB1:  88.59  2705
+
+2020-08-03 02:00:15,176 - log/train.log - INFO - evaluate:test
+2020-08-03 02:01:22,908 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 456 phrases; correct: 435.
+
+2020-08-03 02:01:22,908 - log/train.log - INFO - accuracy:  95.41%; precision:  95.39%; recall:  85.29%; FB1:  90.06
+
+2020-08-03 02:01:22,908 - log/train.log - INFO -               LOC: precision:  95.39%; recall:  85.29%; FB1:  90.06  456
+
+2020-08-03 02:04:55,051 - log/train.log - INFO - iteration:15 step:42/147, NER loss: 1.127403
+2020-08-03 02:13:15,748 - log/train.log - INFO - iteration:15 step:142/147, NER loss: 0.991397
+2020-08-03 02:13:40,927 - log/train.log - INFO - evaluate:dev
+2020-08-03 02:20:13,032 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2877 phrases; correct: 2625.
+
+2020-08-03 02:20:13,032 - log/train.log - INFO - accuracy:  95.14%; precision:  91.24%; recall:  88.50%; FB1:  89.85
+
+2020-08-03 02:20:13,032 - log/train.log - INFO -               LOC: precision:  91.24%; recall:  88.50%; FB1:  89.85  2877
+
+2020-08-03 02:20:13,243 - log/train.log - INFO - new best dev f1 score:89.850
+2020-08-03 02:20:14,053 - log/train.log - INFO - model saved
+2020-08-03 02:20:14,054 - log/train.log - INFO - evaluate:test
+2020-08-03 02:21:21,689 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 483 phrases; correct: 451.
+
+2020-08-03 02:21:21,689 - log/train.log - INFO - accuracy:  95.69%; precision:  93.37%; recall:  88.43%; FB1:  90.84
+
+2020-08-03 02:21:21,689 - log/train.log - INFO -               LOC: precision:  93.37%; recall:  88.43%; FB1:  90.84  483
+
+2020-08-03 02:21:21,902 - log/train.log - INFO - new best test f1 score:90.840
+2020-08-03 02:29:17,125 - log/train.log - INFO - iteration:16 step:95/147, NER loss: 0.898086
+2020-08-03 02:33:39,480 - log/train.log - INFO - evaluate:dev
+2020-08-03 02:40:11,834 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3392 phrases; correct: 2857.
+
+2020-08-03 02:40:11,834 - log/train.log - INFO - accuracy:  94.77%; precision:  84.23%; recall:  96.33%; FB1:  89.87
+
+2020-08-03 02:40:11,834 - log/train.log - INFO -               LOC: precision:  84.23%; recall:  96.33%; FB1:  89.87  3392
+
+2020-08-03 02:40:12,047 - log/train.log - INFO - new best dev f1 score:89.870
+2020-08-03 02:40:12,848 - log/train.log - INFO - model saved
+2020-08-03 02:40:12,849 - log/train.log - INFO - evaluate:test
+2020-08-03 02:41:20,589 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 580 phrases; correct: 490.
+
+2020-08-03 02:41:20,589 - log/train.log - INFO - accuracy:  95.23%; precision:  84.48%; recall:  96.08%; FB1:  89.91
+
+2020-08-03 02:41:20,589 - log/train.log - INFO -               LOC: precision:  84.48%; recall:  96.08%; FB1:  89.91  580
+
+2020-08-03 02:45:18,502 - log/train.log - INFO - iteration:17 step:48/147, NER loss: 0.886820
+2020-08-03 02:53:38,295 - log/train.log - INFO - evaluate:dev
+2020-08-03 03:00:10,724 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3193 phrases; correct: 2776.
+
+2020-08-03 03:00:10,724 - log/train.log - INFO - accuracy:  95.39%; precision:  86.94%; recall:  93.59%; FB1:  90.14
+
+2020-08-03 03:00:10,724 - log/train.log - INFO -               LOC: precision:  86.94%; recall:  93.59%; FB1:  90.14  3193
+
+2020-08-03 03:00:10,940 - log/train.log - INFO - new best dev f1 score:90.140
+2020-08-03 03:00:11,782 - log/train.log - INFO - model saved
+2020-08-03 03:00:11,782 - log/train.log - INFO - evaluate:test
+2020-08-03 03:01:19,429 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 546 phrases; correct: 478.
+
+2020-08-03 03:01:19,429 - log/train.log - INFO - accuracy:  95.63%; precision:  87.55%; recall:  93.73%; FB1:  90.53
+
+2020-08-03 03:01:19,429 - log/train.log - INFO -               LOC: precision:  87.55%; recall:  93.73%; FB1:  90.53  546
+
+2020-08-03 03:01:24,481 - log/train.log - INFO - iteration:18 step:1/147, NER loss: 0.963548
+2020-08-03 03:09:45,203 - log/train.log - INFO - iteration:18 step:101/147, NER loss: 0.964867
+2020-08-03 03:13:37,234 - log/train.log - INFO - evaluate:dev
+2020-08-03 03:20:09,195 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2709 phrases; correct: 2542.
+
+2020-08-03 03:20:09,195 - log/train.log - INFO - accuracy:  95.17%; precision:  93.84%; recall:  85.70%; FB1:  89.59
+
+2020-08-03 03:20:09,195 - log/train.log - INFO -               LOC: precision:  93.84%; recall:  85.70%; FB1:  89.59  2709
+
+2020-08-03 03:20:09,196 - log/train.log - INFO - evaluate:test
+2020-08-03 03:21:17,012 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 459 phrases; correct: 438.
+
+2020-08-03 03:21:17,012 - log/train.log - INFO - accuracy:  95.63%; precision:  95.42%; recall:  85.88%; FB1:  90.40
+
+2020-08-03 03:21:17,012 - log/train.log - INFO -               LOC: precision:  95.42%; recall:  85.88%; FB1:  90.40  459
+
+2020-08-03 03:25:49,455 - log/train.log - INFO - iteration:19 step:54/147, NER loss: 0.699683
+2020-08-03 03:33:34,797 - log/train.log - INFO - evaluate:dev
+2020-08-03 03:40:07,046 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2890 phrases; correct: 2654.
+
+2020-08-03 03:40:07,046 - log/train.log - INFO - accuracy:  95.69%; precision:  91.83%; recall:  89.48%; FB1:  90.64
+
+2020-08-03 03:40:07,046 - log/train.log - INFO -               LOC: precision:  91.83%; recall:  89.48%; FB1:  90.64  2890
+
+2020-08-03 03:40:07,261 - log/train.log - INFO - new best dev f1 score:90.640
+2020-08-03 03:40:08,104 - log/train.log - INFO - model saved
+2020-08-03 03:40:08,105 - log/train.log - INFO - evaluate:test
+2020-08-03 03:41:15,708 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 500 phrases; correct: 461.
+
+2020-08-03 03:41:15,708 - log/train.log - INFO - accuracy:  95.66%; precision:  92.20%; recall:  90.39%; FB1:  91.29
+
+2020-08-03 03:41:15,708 - log/train.log - INFO -               LOC: precision:  92.20%; recall:  90.39%; FB1:  91.29  500
+
+2020-08-03 03:41:15,925 - log/train.log - INFO - new best test f1 score:91.290
+2020-08-03 03:41:51,222 - log/train.log - INFO - iteration:20 step:7/147, NER loss: 0.881530
+2020-08-03 03:50:12,313 - log/train.log - INFO - iteration:20 step:107/147, NER loss: 0.844866
+2020-08-03 03:53:34,115 - log/train.log - INFO - evaluate:dev
+2020-08-03 04:00:06,539 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2757 phrases; correct: 2596.
+
+2020-08-03 04:00:06,539 - log/train.log - INFO - accuracy:  95.58%; precision:  94.16%; recall:  87.53%; FB1:  90.72
+
+2020-08-03 04:00:06,539 - log/train.log - INFO -               LOC: precision:  94.16%; recall:  87.53%; FB1:  90.72  2757
+
+2020-08-03 04:00:06,755 - log/train.log - INFO - new best dev f1 score:90.720
+2020-08-03 04:00:07,594 - log/train.log - INFO - model saved
+2020-08-03 04:00:07,595 - log/train.log - INFO - evaluate:test
+2020-08-03 04:01:15,305 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 474 phrases; correct: 447.
+
+2020-08-03 04:01:15,305 - log/train.log - INFO - accuracy:  95.61%; precision:  94.30%; recall:  87.65%; FB1:  90.85
+
+2020-08-03 04:01:15,305 - log/train.log - INFO -               LOC: precision:  94.30%; recall:  87.65%; FB1:  90.85  474
+
+2020-08-03 04:06:18,258 - log/train.log - INFO - iteration:21 step:60/147, NER loss: 0.825061
+2020-08-03 04:13:33,329 - log/train.log - INFO - evaluate:dev
+2020-08-03 04:20:05,929 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3078 phrases; correct: 2754.
+
+2020-08-03 04:20:05,929 - log/train.log - INFO - accuracy:  95.58%; precision:  89.47%; recall:  92.85%; FB1:  91.13
+
+2020-08-03 04:20:05,930 - log/train.log - INFO -               LOC: precision:  89.47%; recall:  92.85%; FB1:  91.13  3078
+
+2020-08-03 04:20:06,147 - log/train.log - INFO - new best dev f1 score:91.130
+2020-08-03 04:20:06,994 - log/train.log - INFO - model saved
+2020-08-03 04:20:06,994 - log/train.log - INFO - evaluate:test
+2020-08-03 04:21:14,737 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 525 phrases; correct: 475.
+
+2020-08-03 04:21:14,737 - log/train.log - INFO - accuracy:  96.36%; precision:  90.48%; recall:  93.14%; FB1:  91.79
+
+2020-08-03 04:21:14,737 - log/train.log - INFO -               LOC: precision:  90.48%; recall:  93.14%; FB1:  91.79  525
+
+2020-08-03 04:21:14,956 - log/train.log - INFO - new best test f1 score:91.790
+2020-08-03 04:22:20,510 - log/train.log - INFO - iteration:22 step:13/147, NER loss: 0.807548
+2020-08-03 04:30:41,409 - log/train.log - INFO - iteration:22 step:113/147, NER loss: 0.836416
+2020-08-03 04:33:32,667 - log/train.log - INFO - evaluate:dev
+2020-08-03 04:40:05,333 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2760 phrases; correct: 2597.
+
+2020-08-03 04:40:05,333 - log/train.log - INFO - accuracy:  95.56%; precision:  94.09%; recall:  87.56%; FB1:  90.71
+
+2020-08-03 04:40:05,333 - log/train.log - INFO -               LOC: precision:  94.09%; recall:  87.56%; FB1:  90.71  2760
+
+2020-08-03 04:40:05,334 - log/train.log - INFO - evaluate:test
+2020-08-03 04:41:13,029 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 467 phrases; correct: 448.
+
+2020-08-03 04:41:13,029 - log/train.log - INFO - accuracy:  96.26%; precision:  95.93%; recall:  87.84%; FB1:  91.71
+
+2020-08-03 04:41:13,029 - log/train.log - INFO -               LOC: precision:  95.93%; recall:  87.84%; FB1:  91.71  467
+
+2020-08-03 04:46:46,028 - log/train.log - INFO - iteration:23 step:66/147, NER loss: 0.655245
+2020-08-03 04:53:30,780 - log/train.log - INFO - evaluate:dev
+2020-08-03 05:00:03,215 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2865 phrases; correct: 2659.
+
+2020-08-03 05:00:03,215 - log/train.log - INFO - accuracy:  95.61%; precision:  92.81%; recall:  89.65%; FB1:  91.20
+
+2020-08-03 05:00:03,215 - log/train.log - INFO -               LOC: precision:  92.81%; recall:  89.65%; FB1:  91.20  2865
+
+2020-08-03 05:00:03,435 - log/train.log - INFO - new best dev f1 score:91.200
+2020-08-03 05:00:04,244 - log/train.log - INFO - model saved
+2020-08-03 05:00:04,244 - log/train.log - INFO - evaluate:test
+2020-08-03 05:01:11,980 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 479 phrases; correct: 455.
+
+2020-08-03 05:01:11,980 - log/train.log - INFO - accuracy:  96.11%; precision:  94.99%; recall:  89.22%; FB1:  92.01
+
+2020-08-03 05:01:11,980 - log/train.log - INFO -               LOC: precision:  94.99%; recall:  89.22%; FB1:  92.01  479
+
+2020-08-03 05:01:12,199 - log/train.log - INFO - new best test f1 score:92.010
+2020-08-03 05:02:48,207 - log/train.log - INFO - iteration:24 step:19/147, NER loss: 0.830654
+2020-08-03 05:11:09,103 - log/train.log - INFO - iteration:24 step:119/147, NER loss: 0.730007
+2020-08-03 05:13:30,342 - log/train.log - INFO - evaluate:dev
+2020-08-03 05:20:02,561 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2686 phrases; correct: 2552.
+
+2020-08-03 05:20:02,561 - log/train.log - INFO - accuracy:  95.46%; precision:  95.01%; recall:  86.04%; FB1:  90.30
+
+2020-08-03 05:20:02,561 - log/train.log - INFO -               LOC: precision:  95.01%; recall:  86.04%; FB1:  90.30  2686
+
+2020-08-03 05:20:02,562 - log/train.log - INFO - evaluate:test
+2020-08-03 05:21:10,346 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 456 phrases; correct: 445.
+
+2020-08-03 05:21:10,346 - log/train.log - INFO - accuracy:  96.39%; precision:  97.59%; recall:  87.25%; FB1:  92.13
+
+2020-08-03 05:21:10,346 - log/train.log - INFO -               LOC: precision:  97.59%; recall:  87.25%; FB1:  92.13  456
+
+2020-08-03 05:21:10,568 - log/train.log - INFO - new best test f1 score:92.130
+2020-08-03 05:27:10,283 - log/train.log - INFO - iteration:25 step:72/147, NER loss: 0.748744
+2020-08-03 05:33:28,919 - log/train.log - INFO - evaluate:dev
+2020-08-03 05:40:01,452 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2734 phrases; correct: 2597.
+
+2020-08-03 05:40:01,452 - log/train.log - INFO - accuracy:  95.61%; precision:  94.99%; recall:  87.56%; FB1:  91.12
+
+2020-08-03 05:40:01,452 - log/train.log - INFO -               LOC: precision:  94.99%; recall:  87.56%; FB1:  91.12  2734
+
+2020-08-03 05:40:01,453 - log/train.log - INFO - evaluate:test
+2020-08-03 05:41:09,090 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 464 phrases; correct: 443.
+
+2020-08-03 05:41:09,090 - log/train.log - INFO - accuracy:  95.74%; precision:  95.47%; recall:  86.86%; FB1:  90.97
+
+2020-08-03 05:41:09,090 - log/train.log - INFO -               LOC: precision:  95.47%; recall:  86.86%; FB1:  90.97  464
+
+2020-08-03 05:43:15,111 - log/train.log - INFO - iteration:26 step:25/147, NER loss: 0.685155
+2020-08-03 05:51:40,012 - log/train.log - INFO - iteration:26 step:125/147, NER loss: 0.785585
+2020-08-03 05:53:26,683 - log/train.log - INFO - evaluate:dev
+2020-08-03 05:59:59,306 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2730 phrases; correct: 2591.
+
+2020-08-03 05:59:59,307 - log/train.log - INFO - accuracy:  95.71%; precision:  94.91%; recall:  87.36%; FB1:  90.98
+
+2020-08-03 05:59:59,307 - log/train.log - INFO -               LOC: precision:  94.91%; recall:  87.36%; FB1:  90.98  2730
+
+2020-08-03 05:59:59,307 - log/train.log - INFO - evaluate:test
+2020-08-03 06:01:07,093 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 476 phrases; correct: 453.
+
+2020-08-03 06:01:07,093 - log/train.log - INFO - accuracy:  96.18%; precision:  95.17%; recall:  88.82%; FB1:  91.89
+
+2020-08-03 06:01:07,093 - log/train.log - INFO -               LOC: precision:  95.17%; recall:  88.82%; FB1:  91.89  476
+
+2020-08-03 06:07:40,619 - log/train.log - INFO - iteration:27 step:78/147, NER loss: 0.598162
+2020-08-03 06:13:25,026 - log/train.log - INFO - evaluate:dev
+2020-08-03 06:19:57,581 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3053 phrases; correct: 2752.
+
+2020-08-03 06:19:57,581 - log/train.log - INFO - accuracy:  95.68%; precision:  90.14%; recall:  92.78%; FB1:  91.44
+
+2020-08-03 06:19:57,581 - log/train.log - INFO -               LOC: precision:  90.14%; recall:  92.78%; FB1:  91.44  3053
+
+2020-08-03 06:19:57,802 - log/train.log - INFO - new best dev f1 score:91.440
+2020-08-03 06:19:58,579 - log/train.log - INFO - model saved
+2020-08-03 06:19:58,579 - log/train.log - INFO - evaluate:test
+2020-08-03 06:21:06,388 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 509 phrases; correct: 464.
+
+2020-08-03 06:21:06,388 - log/train.log - INFO - accuracy:  95.72%; precision:  91.16%; recall:  90.98%; FB1:  91.07
+
+2020-08-03 06:21:06,389 - log/train.log - INFO -               LOC: precision:  91.16%; recall:  90.98%; FB1:  91.07  509
+
+2020-08-03 06:23:38,734 - log/train.log - INFO - iteration:28 step:31/147, NER loss: 0.803047
+2020-08-03 06:32:03,455 - log/train.log - INFO - iteration:28 step:131/147, NER loss: 0.678213
+2020-08-03 06:33:24,088 - log/train.log - INFO - evaluate:dev
+2020-08-03 06:39:56,475 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3082 phrases; correct: 2756.
+
+2020-08-03 06:39:56,475 - log/train.log - INFO - accuracy:  95.58%; precision:  89.42%; recall:  92.92%; FB1:  91.14
+
+2020-08-03 06:39:56,475 - log/train.log - INFO -               LOC: precision:  89.42%; recall:  92.92%; FB1:  91.14  3082
+
+2020-08-03 06:39:56,476 - log/train.log - INFO - evaluate:test
+2020-08-03 06:41:04,161 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 519 phrases; correct: 472.
+
+2020-08-03 06:41:04,161 - log/train.log - INFO - accuracy:  96.00%; precision:  90.94%; recall:  92.55%; FB1:  91.74
+
+2020-08-03 06:41:04,161 - log/train.log - INFO -               LOC: precision:  90.94%; recall:  92.55%; FB1:  91.74  519
+
+2020-08-03 06:48:04,336 - log/train.log - INFO - iteration:29 step:84/147, NER loss: 0.664880
+2020-08-03 06:53:22,323 - log/train.log - INFO - evaluate:dev
+2020-08-03 06:59:54,636 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3016 phrases; correct: 2736.
+
+2020-08-03 06:59:54,636 - log/train.log - INFO - accuracy:  95.67%; precision:  90.72%; recall:  92.25%; FB1:  91.47
+
+2020-08-03 06:59:54,636 - log/train.log - INFO -               LOC: precision:  90.72%; recall:  92.25%; FB1:  91.47  3016
+
+2020-08-03 06:59:54,858 - log/train.log - INFO - new best dev f1 score:91.470
+2020-08-03 06:59:55,714 - log/train.log - INFO - model saved
+2020-08-03 06:59:55,714 - log/train.log - INFO - evaluate:test
+2020-08-03 07:01:03,445 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 516 phrases; correct: 469.
+
+2020-08-03 07:01:03,445 - log/train.log - INFO - accuracy:  95.76%; precision:  90.89%; recall:  91.96%; FB1:  91.42
+
+2020-08-03 07:01:03,445 - log/train.log - INFO -               LOC: precision:  90.89%; recall:  91.96%; FB1:  91.42  516
+
+2020-08-03 07:04:10,375 - log/train.log - INFO - iteration:30 step:37/147, NER loss: 0.666456
+2020-08-03 07:12:31,073 - log/train.log - INFO - iteration:30 step:137/147, NER loss: 0.669085
+2020-08-03 07:13:21,636 - log/train.log - INFO - evaluate:dev
+2020-08-03 07:19:54,039 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3202 phrases; correct: 2836.
+
+2020-08-03 07:19:54,039 - log/train.log - INFO - accuracy:  95.72%; precision:  88.57%; recall:  95.62%; FB1:  91.96
+
+2020-08-03 07:19:54,039 - log/train.log - INFO -               LOC: precision:  88.57%; recall:  95.62%; FB1:  91.96  3202
+
+2020-08-03 07:19:54,261 - log/train.log - INFO - new best dev f1 score:91.960
+2020-08-03 07:19:55,116 - log/train.log - INFO - model saved
+2020-08-03 07:19:55,117 - log/train.log - INFO - evaluate:test
+2020-08-03 07:21:02,817 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 544 phrases; correct: 489.
+
+2020-08-03 07:21:02,817 - log/train.log - INFO - accuracy:  96.48%; precision:  89.89%; recall:  95.88%; FB1:  92.79
+
+2020-08-03 07:21:02,818 - log/train.log - INFO -               LOC: precision:  89.89%; recall:  95.88%; FB1:  92.79  544
+
+2020-08-03 07:21:03,041 - log/train.log - INFO - new best test f1 score:92.790
+2020-08-03 07:28:33,537 - log/train.log - INFO - iteration:31 step:90/147, NER loss: 0.747386
+2020-08-03 07:33:21,036 - log/train.log - INFO - evaluate:dev
+2020-08-03 07:39:53,255 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2960 phrases; correct: 2696.
+
+2020-08-03 07:39:53,255 - log/train.log - INFO - accuracy:  95.36%; precision:  91.08%; recall:  90.90%; FB1:  90.99
+
+2020-08-03 07:39:53,255 - log/train.log - INFO -               LOC: precision:  91.08%; recall:  90.90%; FB1:  90.99  2960
+
+2020-08-03 07:39:53,256 - log/train.log - INFO - evaluate:test
+2020-08-03 07:41:01,036 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 506 phrases; correct: 461.
+
+2020-08-03 07:41:01,036 - log/train.log - INFO - accuracy:  95.89%; precision:  91.11%; recall:  90.39%; FB1:  90.75
+
+2020-08-03 07:41:01,036 - log/train.log - INFO -               LOC: precision:  91.11%; recall:  90.39%; FB1:  90.75  506
+
+2020-08-03 07:44:33,935 - log/train.log - INFO - iteration:32 step:43/147, NER loss: 0.641369
+2020-08-03 07:52:58,490 - log/train.log - INFO - iteration:32 step:143/147, NER loss: 0.553843
+2020-08-03 07:53:18,743 - log/train.log - INFO - evaluate:dev
+2020-08-03 07:59:50,894 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2585 phrases; correct: 2495.
+
+2020-08-03 07:59:50,895 - log/train.log - INFO - accuracy:  95.22%; precision:  96.52%; recall:  84.12%; FB1:  89.89
+
+2020-08-03 07:59:50,895 - log/train.log - INFO -               LOC: precision:  96.52%; recall:  84.12%; FB1:  89.89  2585
+
+2020-08-03 07:59:50,896 - log/train.log - INFO - evaluate:test
+2020-08-03 08:00:58,515 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 452 phrases; correct: 437.
+
+2020-08-03 08:00:58,515 - log/train.log - INFO - accuracy:  95.69%; precision:  96.68%; recall:  85.69%; FB1:  90.85
+
+2020-08-03 08:00:58,515 - log/train.log - INFO -               LOC: precision:  96.68%; recall:  85.69%; FB1:  90.85  452
+
+2020-08-03 08:09:03,055 - log/train.log - INFO - iteration:33 step:96/147, NER loss: 0.629052
+2020-08-03 08:13:16,380 - log/train.log - INFO - evaluate:dev
+2020-08-03 08:19:48,688 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2742 phrases; correct: 2610.
+
+2020-08-03 08:19:48,688 - log/train.log - INFO - accuracy:  95.77%; precision:  95.19%; recall:  88.00%; FB1:  91.45
+
+2020-08-03 08:19:48,688 - log/train.log - INFO -               LOC: precision:  95.19%; recall:  88.00%; FB1:  91.45  2742
+
+2020-08-03 08:19:48,689 - log/train.log - INFO - evaluate:test
+2020-08-03 08:20:56,281 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 470 phrases; correct: 452.
+
+2020-08-03 08:20:56,282 - log/train.log - INFO - accuracy:  96.21%; precision:  96.17%; recall:  88.63%; FB1:  92.24
+
+2020-08-03 08:20:56,282 - log/train.log - INFO -               LOC: precision:  96.17%; recall:  88.63%; FB1:  92.24  470
+
+2020-08-03 08:25:03,485 - log/train.log - INFO - iteration:34 step:49/147, NER loss: 0.626270
+2020-08-03 08:33:13,975 - log/train.log - INFO - evaluate:dev
+2020-08-03 08:39:46,298 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3179 phrases; correct: 2807.
+
+2020-08-03 08:39:46,299 - log/train.log - INFO - accuracy:  95.43%; precision:  88.30%; recall:  94.64%; FB1:  91.36
+
+2020-08-03 08:39:46,299 - log/train.log - INFO -               LOC: precision:  88.30%; recall:  94.64%; FB1:  91.36  3179
+
+2020-08-03 08:39:46,299 - log/train.log - INFO - evaluate:test
+2020-08-03 08:40:53,955 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 546 phrases; correct: 483.
+
+2020-08-03 08:40:53,955 - log/train.log - INFO - accuracy:  95.77%; precision:  88.46%; recall:  94.71%; FB1:  91.48
+
+2020-08-03 08:40:53,955 - log/train.log - INFO -               LOC: precision:  88.46%; recall:  94.71%; FB1:  91.48  546
+
+2020-08-03 08:41:04,073 - log/train.log - INFO - iteration:35 step:2/147, NER loss: 0.666809
+2020-08-03 08:49:24,667 - log/train.log - INFO - iteration:35 step:102/147, NER loss: 0.615631
+2020-08-03 08:53:11,681 - log/train.log - INFO - evaluate:dev
+2020-08-03 08:59:43,826 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3318 phrases; correct: 2880.
+
+2020-08-03 08:59:43,826 - log/train.log - INFO - accuracy:  95.49%; precision:  86.80%; recall:  97.10%; FB1:  91.66
+
+2020-08-03 08:59:43,826 - log/train.log - INFO -               LOC: precision:  86.80%; recall:  97.10%; FB1:  91.66  3318
+
+2020-08-03 08:59:43,827 - log/train.log - INFO - evaluate:test
+2020-08-03 09:00:51,463 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 567 phrases; correct: 494.
+
+2020-08-03 09:00:51,463 - log/train.log - INFO - accuracy:  95.73%; precision:  87.13%; recall:  96.86%; FB1:  91.74
+
+2020-08-03 09:00:51,463 - log/train.log - INFO -               LOC: precision:  87.13%; recall:  96.86%; FB1:  91.74  567
+
+2020-08-03 09:05:29,149 - log/train.log - INFO - iteration:36 step:55/147, NER loss: 0.538163
+2020-08-03 09:13:09,181 - log/train.log - INFO - evaluate:dev
+2020-08-03 09:19:41,450 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2847 phrases; correct: 2656.
+
+2020-08-03 09:19:41,450 - log/train.log - INFO - accuracy:  95.67%; precision:  93.29%; recall:  89.55%; FB1:  91.38
+
+2020-08-03 09:19:41,450 - log/train.log - INFO -               LOC: precision:  93.29%; recall:  89.55%; FB1:  91.38  2847
+
+2020-08-03 09:19:41,451 - log/train.log - INFO - evaluate:test
+2020-08-03 09:20:49,054 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 483 phrases; correct: 460.
+
+2020-08-03 09:20:49,055 - log/train.log - INFO - accuracy:  96.00%; precision:  95.24%; recall:  90.20%; FB1:  92.65
+
+2020-08-03 09:20:49,055 - log/train.log - INFO -               LOC: precision:  95.24%; recall:  90.20%; FB1:  92.65  483
+
+2020-08-03 09:21:29,441 - log/train.log - INFO - iteration:37 step:8/147, NER loss: 0.651936
+2020-08-03 09:29:49,911 - log/train.log - INFO - iteration:37 step:108/147, NER loss: 0.611259
+2020-08-03 09:33:06,734 - log/train.log - INFO - evaluate:dev
+2020-08-03 09:39:39,373 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2929 phrases; correct: 2698.
+
+2020-08-03 09:39:39,373 - log/train.log - INFO - accuracy:  95.65%; precision:  92.11%; recall:  90.96%; FB1:  91.54
+
+2020-08-03 09:39:39,373 - log/train.log - INFO -               LOC: precision:  92.11%; recall:  90.96%; FB1:  91.54  2929
+
+2020-08-03 09:39:39,374 - log/train.log - INFO - evaluate:test
+2020-08-03 09:40:47,076 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 500 phrases; correct: 467.
+
+2020-08-03 09:40:47,076 - log/train.log - INFO - accuracy:  96.38%; precision:  93.40%; recall:  91.57%; FB1:  92.48
+
+2020-08-03 09:40:47,076 - log/train.log - INFO -               LOC: precision:  93.40%; recall:  91.57%; FB1:  92.48  500
+
+2020-08-03 09:45:55,325 - log/train.log - INFO - iteration:38 step:61/147, NER loss: 0.709542
+2020-08-03 09:53:05,111 - log/train.log - INFO - evaluate:dev
+2020-08-03 09:59:37,548 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2659 phrases; correct: 2570.
+
+2020-08-03 09:59:37,548 - log/train.log - INFO - accuracy:  95.75%; precision:  96.65%; recall:  86.65%; FB1:  91.38
+
+2020-08-03 09:59:37,548 - log/train.log - INFO -               LOC: precision:  96.65%; recall:  86.65%; FB1:  91.38  2659
+
+2020-08-03 09:59:37,549 - log/train.log - INFO - evaluate:test
+2020-08-03 10:00:45,315 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 457 phrases; correct: 441.
+
+2020-08-03 10:00:45,315 - log/train.log - INFO - accuracy:  96.00%; precision:  96.50%; recall:  86.47%; FB1:  91.21
+
+2020-08-03 10:00:45,315 - log/train.log - INFO -               LOC: precision:  96.50%; recall:  86.47%; FB1:  91.21  457
+
+2020-08-03 10:01:55,906 - log/train.log - INFO - iteration:39 step:14/147, NER loss: 0.452963
+2020-08-03 10:10:16,561 - log/train.log - INFO - iteration:39 step:114/147, NER loss: 0.666875
+2020-08-03 10:13:03,175 - log/train.log - INFO - evaluate:dev
+2020-08-03 10:19:35,620 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2612 phrases; correct: 2540.
+
+2020-08-03 10:19:35,620 - log/train.log - INFO - accuracy:  95.56%; precision:  97.24%; recall:  85.64%; FB1:  91.07
+
+2020-08-03 10:19:35,620 - log/train.log - INFO -               LOC: precision:  97.24%; recall:  85.64%; FB1:  91.07  2612
+
+2020-08-03 10:19:35,621 - log/train.log - INFO - evaluate:test
+2020-08-03 10:20:43,318 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 447 phrases; correct: 436.
+
+2020-08-03 10:20:43,318 - log/train.log - INFO - accuracy:  96.03%; precision:  97.54%; recall:  85.49%; FB1:  91.12
+
+2020-08-03 10:20:43,318 - log/train.log - INFO -               LOC: precision:  97.54%; recall:  85.49%; FB1:  91.12  447
+
+2020-08-03 10:26:21,219 - log/train.log - INFO - iteration:40 step:67/147, NER loss: 0.527397
+2020-08-03 10:33:00,933 - log/train.log - INFO - evaluate:dev
+2020-08-03 10:39:33,429 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3388 phrases; correct: 2914.
+
+2020-08-03 10:39:33,429 - log/train.log - INFO - accuracy:  95.26%; precision:  86.01%; recall:  98.25%; FB1:  91.72
+
+2020-08-03 10:39:33,429 - log/train.log - INFO -               LOC: precision:  86.01%; recall:  98.25%; FB1:  91.72  3388
+
+2020-08-03 10:39:33,430 - log/train.log - INFO - evaluate:test
+2020-08-03 10:40:41,073 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 583 phrases; correct: 498.
+
+2020-08-03 10:40:41,073 - log/train.log - INFO - accuracy:  95.15%; precision:  85.42%; recall:  97.65%; FB1:  91.13
+
+2020-08-03 10:40:41,073 - log/train.log - INFO -               LOC: precision:  85.42%; recall:  97.65%; FB1:  91.13  583
+
+2020-08-03 10:42:21,846 - log/train.log - INFO - iteration:41 step:20/147, NER loss: 0.673308
+2020-08-03 10:50:46,827 - log/train.log - INFO - iteration:41 step:120/147, NER loss: 0.572928
+2020-08-03 10:52:59,132 - log/train.log - INFO - evaluate:dev
+2020-08-03 10:59:31,497 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3367 phrases; correct: 2905.
+
+2020-08-03 10:59:31,497 - log/train.log - INFO - accuracy:  95.41%; precision:  86.28%; recall:  97.94%; FB1:  91.74
+
+2020-08-03 10:59:31,497 - log/train.log - INFO -               LOC: precision:  86.28%; recall:  97.94%; FB1:  91.74  3367
+
+2020-08-03 10:59:31,498 - log/train.log - INFO - evaluate:test
+2020-08-03 11:00:39,187 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 576 phrases; correct: 494.
+
+2020-08-03 11:00:39,187 - log/train.log - INFO - accuracy:  95.17%; precision:  85.76%; recall:  96.86%; FB1:  90.98
+
+2020-08-03 11:00:39,187 - log/train.log - INFO -               LOC: precision:  85.76%; recall:  96.86%; FB1:  90.98  576
+
+2020-08-03 11:06:47,559 - log/train.log - INFO - iteration:42 step:73/147, NER loss: 0.659588
+2020-08-03 11:12:57,120 - log/train.log - INFO - evaluate:dev
+2020-08-03 11:19:29,235 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3425 phrases; correct: 2914.
+
+2020-08-03 11:19:29,235 - log/train.log - INFO - accuracy:  94.91%; precision:  85.08%; recall:  98.25%; FB1:  91.19
+
+2020-08-03 11:19:29,235 - log/train.log - INFO -               LOC: precision:  85.08%; recall:  98.25%; FB1:  91.19  3425
+
+2020-08-03 11:19:29,236 - log/train.log - INFO - evaluate:test
+2020-08-03 11:20:37,020 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 590 phrases; correct: 501.
+
+2020-08-03 11:20:37,020 - log/train.log - INFO - accuracy:  94.95%; precision:  84.92%; recall:  98.24%; FB1:  91.09
+
+2020-08-03 11:20:37,020 - log/train.log - INFO -               LOC: precision:  84.92%; recall:  98.24%; FB1:  91.09  590
+
+2020-08-03 11:22:48,365 - log/train.log - INFO - iteration:43 step:26/147, NER loss: 0.650008
+2020-08-03 11:31:08,721 - log/train.log - INFO - iteration:43 step:126/147, NER loss: 0.502243
+2020-08-03 11:32:54,791 - log/train.log - INFO - evaluate:dev
+2020-08-03 11:39:26,818 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3139 phrases; correct: 2821.
+
+2020-08-03 11:39:26,818 - log/train.log - INFO - accuracy:  95.89%; precision:  89.87%; recall:  95.11%; FB1:  92.42
+
+2020-08-03 11:39:26,818 - log/train.log - INFO -               LOC: precision:  89.87%; recall:  95.11%; FB1:  92.42  3139
+
+2020-08-03 11:39:27,043 - log/train.log - INFO - new best dev f1 score:92.420
+2020-08-03 11:39:27,882 - log/train.log - INFO - model saved
+2020-08-03 11:39:27,883 - log/train.log - INFO - evaluate:test
+2020-08-03 11:40:35,753 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 524 phrases; correct: 479.
+
+2020-08-03 11:40:35,753 - log/train.log - INFO - accuracy:  96.35%; precision:  91.41%; recall:  93.92%; FB1:  92.65
+
+2020-08-03 11:40:35,753 - log/train.log - INFO -               LOC: precision:  91.41%; recall:  93.92%; FB1:  92.65  524
+
+2020-08-03 11:47:14,562 - log/train.log - INFO - iteration:44 step:79/147, NER loss: 0.532874
+2020-08-03 11:52:53,881 - log/train.log - INFO - evaluate:dev
+2020-08-03 11:59:26,243 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2765 phrases; correct: 2639.
+
+2020-08-03 11:59:26,243 - log/train.log - INFO - accuracy:  96.03%; precision:  95.44%; recall:  88.98%; FB1:  92.10
+
+2020-08-03 11:59:26,243 - log/train.log - INFO -               LOC: precision:  95.44%; recall:  88.98%; FB1:  92.10  2765
+
+2020-08-03 11:59:26,244 - log/train.log - INFO - evaluate:test
+2020-08-03 12:00:34,059 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 469 phrases; correct: 448.
+
+2020-08-03 12:00:34,059 - log/train.log - INFO - accuracy:  95.76%; precision:  95.52%; recall:  87.84%; FB1:  91.52
+
+2020-08-03 12:00:34,059 - log/train.log - INFO -               LOC: precision:  95.52%; recall:  87.84%; FB1:  91.52  469
+
+2020-08-03 12:03:15,692 - log/train.log - INFO - iteration:45 step:32/147, NER loss: 0.618627
+2020-08-03 12:11:36,613 - log/train.log - INFO - iteration:45 step:132/147, NER loss: 0.584758
+2020-08-03 12:12:52,525 - log/train.log - INFO - evaluate:dev
+2020-08-03 12:19:25,367 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2894 phrases; correct: 2694.
+
+2020-08-03 12:19:25,367 - log/train.log - INFO - accuracy:  95.89%; precision:  93.09%; recall:  90.83%; FB1:  91.95
+
+2020-08-03 12:19:25,367 - log/train.log - INFO -               LOC: precision:  93.09%; recall:  90.83%; FB1:  91.95  2894
+
+2020-08-03 12:19:25,368 - log/train.log - INFO - evaluate:test
+2020-08-03 12:20:33,145 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 487 phrases; correct: 461.
+
+2020-08-03 12:20:33,145 - log/train.log - INFO - accuracy:  96.21%; precision:  94.66%; recall:  90.39%; FB1:  92.48
+
+2020-08-03 12:20:33,145 - log/train.log - INFO -               LOC: precision:  94.66%; recall:  90.39%; FB1:  92.48  487
+
+2020-08-03 12:27:42,511 - log/train.log - INFO - iteration:46 step:85/147, NER loss: 0.610108
+2020-08-03 12:32:51,337 - log/train.log - INFO - evaluate:dev
+2020-08-03 12:39:23,549 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3359 phrases; correct: 2898.
+
+2020-08-03 12:39:23,549 - log/train.log - INFO - accuracy:  95.31%; precision:  86.28%; recall:  97.71%; FB1:  91.64
+
+2020-08-03 12:39:23,549 - log/train.log - INFO -               LOC: precision:  86.28%; recall:  97.71%; FB1:  91.64  3359
+
+2020-08-03 12:39:23,550 - log/train.log - INFO - evaluate:test
+2020-08-03 12:40:31,335 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 567 phrases; correct: 495.
+
+2020-08-03 12:40:31,335 - log/train.log - INFO - accuracy:  95.82%; precision:  87.30%; recall:  97.06%; FB1:  91.92
+
+2020-08-03 12:40:31,335 - log/train.log - INFO -               LOC: precision:  87.30%; recall:  97.06%; FB1:  91.92  567
+
+2020-08-03 12:43:43,300 - log/train.log - INFO - iteration:47 step:38/147, NER loss: 0.595841
+2020-08-03 12:52:03,933 - log/train.log - INFO - iteration:47 step:138/147, NER loss: 0.531217
+2020-08-03 12:52:49,342 - log/train.log - INFO - evaluate:dev
+2020-08-03 12:59:22,068 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2899 phrases; correct: 2697.
+
+2020-08-03 12:59:22,068 - log/train.log - INFO - accuracy:  95.76%; precision:  93.03%; recall:  90.93%; FB1:  91.97
+
+2020-08-03 12:59:22,068 - log/train.log - INFO -               LOC: precision:  93.03%; recall:  90.93%; FB1:  91.97  2899
+
+2020-08-03 12:59:22,069 - log/train.log - INFO - evaluate:test
+2020-08-03 13:00:29,693 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 492 phrases; correct: 466.
+
+2020-08-03 13:00:29,693 - log/train.log - INFO - accuracy:  96.54%; precision:  94.72%; recall:  91.37%; FB1:  93.01
+
+2020-08-03 13:00:29,693 - log/train.log - INFO -               LOC: precision:  94.72%; recall:  91.37%; FB1:  93.01  492
+
+2020-08-03 13:00:29,919 - log/train.log - INFO - new best test f1 score:93.010
+2020-08-03 13:08:09,175 - log/train.log - INFO - iteration:48 step:91/147, NER loss: 0.576296
+2020-08-03 13:12:47,696 - log/train.log - INFO - evaluate:dev
+2020-08-03 13:19:20,549 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3086 phrases; correct: 2783.
+
+2020-08-03 13:19:20,549 - log/train.log - INFO - accuracy:  95.91%; precision:  90.18%; recall:  93.83%; FB1:  91.97
+
+2020-08-03 13:19:20,549 - log/train.log - INFO -               LOC: precision:  90.18%; recall:  93.83%; FB1:  91.97  3086
+
+2020-08-03 13:19:20,550 - log/train.log - INFO - evaluate:test
+2020-08-03 13:20:28,357 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 523 phrases; correct: 477.
+
+2020-08-03 13:20:28,357 - log/train.log - INFO - accuracy:  96.45%; precision:  91.20%; recall:  93.53%; FB1:  92.35
+
+2020-08-03 13:20:28,357 - log/train.log - INFO -               LOC: precision:  91.20%; recall:  93.53%; FB1:  92.35  523
+
+2020-08-03 13:24:10,297 - log/train.log - INFO - iteration:49 step:44/147, NER loss: 0.491433
+2020-08-03 13:32:30,979 - log/train.log - INFO - iteration:49 step:144/147, NER loss: 0.583629
+2020-08-03 13:32:46,146 - log/train.log - INFO - evaluate:dev
+2020-08-03 13:39:18,417 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2934 phrases; correct: 2706.
+
+2020-08-03 13:39:18,417 - log/train.log - INFO - accuracy:  95.76%; precision:  92.23%; recall:  91.23%; FB1:  91.73
+
+2020-08-03 13:39:18,417 - log/train.log - INFO -               LOC: precision:  92.23%; recall:  91.23%; FB1:  91.73  2934
+
+2020-08-03 13:39:18,418 - log/train.log - INFO - evaluate:test
+2020-08-03 13:40:26,113 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 510 phrases; correct: 471.
+
+2020-08-03 13:40:26,113 - log/train.log - INFO - accuracy:  96.02%; precision:  92.35%; recall:  92.35%; FB1:  92.35
+
+2020-08-03 13:40:26,114 - log/train.log - INFO -               LOC: precision:  92.35%; recall:  92.35%; FB1:  92.35  510
+
+2020-08-03 13:48:32,059 - log/train.log - INFO - iteration:50 step:97/147, NER loss: 0.533127
+2020-08-03 13:52:44,496 - log/train.log - INFO - evaluate:dev
+2020-08-03 13:59:17,129 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2567 phrases; correct: 2514.
+
+2020-08-03 13:59:17,129 - log/train.log - INFO - accuracy:  95.66%; precision:  97.94%; recall:  84.76%; FB1:  90.87
+
+2020-08-03 13:59:17,129 - log/train.log - INFO -               LOC: precision:  97.94%; recall:  84.76%; FB1:  90.87  2567
+
+2020-08-03 13:59:17,130 - log/train.log - INFO - evaluate:test
+2020-08-03 14:00:24,960 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 448 phrases; correct: 439.
+
+2020-08-03 14:00:24,960 - log/train.log - INFO - accuracy:  95.74%; precision:  97.99%; recall:  86.08%; FB1:  91.65
+
+2020-08-03 14:00:24,960 - log/train.log - INFO -               LOC: precision:  97.99%; recall:  86.08%; FB1:  91.65  448
+
+2020-08-03 14:04:37,379 - log/train.log - INFO - iteration:51 step:50/147, NER loss: 0.519116
+2020-08-03 14:12:43,185 - log/train.log - INFO - evaluate:dev
+2020-08-03 14:19:15,886 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2923 phrases; correct: 2709.
+
+2020-08-03 14:19:15,886 - log/train.log - INFO - accuracy:  95.78%; precision:  92.68%; recall:  91.34%; FB1:  92.00
+
+2020-08-03 14:19:15,886 - log/train.log - INFO -               LOC: precision:  92.68%; recall:  91.34%; FB1:  92.00  2923
+
+2020-08-03 14:19:15,887 - log/train.log - INFO - evaluate:test
+2020-08-03 14:20:23,752 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 495 phrases; correct: 466.
+
+2020-08-03 14:20:23,752 - log/train.log - INFO - accuracy:  96.61%; precision:  94.14%; recall:  91.37%; FB1:  92.74
+
+2020-08-03 14:20:23,752 - log/train.log - INFO -               LOC: precision:  94.14%; recall:  91.37%; FB1:  92.74  495
+
+2020-08-03 14:20:38,941 - log/train.log - INFO - iteration:52 step:3/147, NER loss: 0.615787
+2020-08-03 14:29:04,131 - log/train.log - INFO - iteration:52 step:103/147, NER loss: 0.616779
+2020-08-03 14:32:42,142 - log/train.log - INFO - evaluate:dev
+2020-08-03 14:39:14,835 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3183 phrases; correct: 2828.
+
+2020-08-03 14:39:14,835 - log/train.log - INFO - accuracy:  95.74%; precision:  88.85%; recall:  95.35%; FB1:  91.98
+
+2020-08-03 14:39:14,835 - log/train.log - INFO -               LOC: precision:  88.85%; recall:  95.35%; FB1:  91.98  3183
+
+2020-08-03 14:39:14,836 - log/train.log - INFO - evaluate:test
+2020-08-03 14:40:22,621 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 548 phrases; correct: 487.
+
+2020-08-03 14:40:22,621 - log/train.log - INFO - accuracy:  95.83%; precision:  88.87%; recall:  95.49%; FB1:  92.06
+
+2020-08-03 14:40:22,621 - log/train.log - INFO -               LOC: precision:  88.87%; recall:  95.49%; FB1:  92.06  548
+
+2020-08-03 14:45:05,506 - log/train.log - INFO - iteration:53 step:56/147, NER loss: 0.526556
+2020-08-03 14:52:40,805 - log/train.log - INFO - evaluate:dev
+2020-08-03 14:59:13,236 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3230 phrases; correct: 2852.
+
+2020-08-03 14:59:13,237 - log/train.log - INFO - accuracy:  95.60%; precision:  88.30%; recall:  96.16%; FB1:  92.06
+
+2020-08-03 14:59:13,237 - log/train.log - INFO -               LOC: precision:  88.30%; recall:  96.16%; FB1:  92.06  3230
+
+2020-08-03 14:59:13,238 - log/train.log - INFO - evaluate:test
+2020-08-03 15:00:20,981 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 549 phrases; correct: 487.
+
+2020-08-03 15:00:20,981 - log/train.log - INFO - accuracy:  95.72%; precision:  88.71%; recall:  95.49%; FB1:  91.97
+
+2020-08-03 15:00:20,981 - log/train.log - INFO -               LOC: precision:  88.71%; recall:  95.49%; FB1:  91.97  549
+
+2020-08-03 15:01:06,504 - log/train.log - INFO - iteration:54 step:9/147, NER loss: 0.491124
+2020-08-03 15:09:27,120 - log/train.log - INFO - iteration:54 step:109/147, NER loss: 0.568004
+2020-08-03 15:12:38,966 - log/train.log - INFO - evaluate:dev
+2020-08-03 15:19:11,394 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3046 phrases; correct: 2770.
+
+2020-08-03 15:19:11,395 - log/train.log - INFO - accuracy:  95.93%; precision:  90.94%; recall:  93.39%; FB1:  92.15
+
+2020-08-03 15:19:11,395 - log/train.log - INFO -               LOC: precision:  90.94%; recall:  93.39%; FB1:  92.15  3046
+
+2020-08-03 15:19:11,396 - log/train.log - INFO - evaluate:test
+2020-08-03 15:20:19,048 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 519 phrases; correct: 475.
+
+2020-08-03 15:20:19,048 - log/train.log - INFO - accuracy:  96.38%; precision:  91.52%; recall:  93.14%; FB1:  92.32
+
+2020-08-03 15:20:19,048 - log/train.log - INFO -               LOC: precision:  91.52%; recall:  93.14%; FB1:  92.32  519
+
+2020-08-03 15:25:32,193 - log/train.log - INFO - iteration:55 step:62/147, NER loss: 0.559888
+2020-08-03 15:32:36,961 - log/train.log - INFO - evaluate:dev
+2020-08-03 15:39:09,472 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2820 phrases; correct: 2657.
+
+2020-08-03 15:39:09,472 - log/train.log - INFO - accuracy:  95.89%; precision:  94.22%; recall:  89.58%; FB1:  91.84
+
+2020-08-03 15:39:09,472 - log/train.log - INFO -               LOC: precision:  94.22%; recall:  89.58%; FB1:  91.84  2820
+
+2020-08-03 15:39:09,473 - log/train.log - INFO - evaluate:test
+2020-08-03 15:40:17,214 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 479 phrases; correct: 454.
+
+2020-08-03 15:40:17,214 - log/train.log - INFO - accuracy:  96.11%; precision:  94.78%; recall:  89.02%; FB1:  91.81
+
+2020-08-03 15:40:17,214 - log/train.log - INFO -               LOC: precision:  94.78%; recall:  89.02%; FB1:  91.81  479
+
+2020-08-03 15:41:32,810 - log/train.log - INFO - iteration:56 step:15/147, NER loss: 0.469599
+2020-08-03 15:49:53,525 - log/train.log - INFO - iteration:56 step:115/147, NER loss: 0.547203
+2020-08-03 15:52:35,397 - log/train.log - INFO - evaluate:dev
+2020-08-03 15:59:07,732 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2613 phrases; correct: 2546.
+
+2020-08-03 15:59:07,732 - log/train.log - INFO - accuracy:  95.63%; precision:  97.44%; recall:  85.84%; FB1:  91.27
+
+2020-08-03 15:59:07,732 - log/train.log - INFO -               LOC: precision:  97.44%; recall:  85.84%; FB1:  91.27  2613
+
+2020-08-03 15:59:07,733 - log/train.log - INFO - evaluate:test
+2020-08-03 16:00:15,523 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 450 phrases; correct: 439.
+
+2020-08-03 16:00:15,523 - log/train.log - INFO - accuracy:  95.66%; precision:  97.56%; recall:  86.08%; FB1:  91.46
+
+2020-08-03 16:00:15,523 - log/train.log - INFO -               LOC: precision:  97.56%; recall:  86.08%; FB1:  91.46  450
+
+2020-08-03 16:05:58,949 - log/train.log - INFO - iteration:57 step:68/147, NER loss: 0.577357
+2020-08-03 16:12:33,811 - log/train.log - INFO - evaluate:dev
+2020-08-03 16:19:06,193 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2604 phrases; correct: 2537.
+
+2020-08-03 16:19:06,193 - log/train.log - INFO - accuracy:  95.57%; precision:  97.43%; recall:  85.54%; FB1:  91.10
+
+2020-08-03 16:19:06,193 - log/train.log - INFO -               LOC: precision:  97.43%; recall:  85.54%; FB1:  91.10  2604
+
+2020-08-03 16:19:06,194 - log/train.log - INFO - evaluate:test
+2020-08-03 16:20:13,923 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 440 phrases; correct: 433.
+
+2020-08-03 16:20:13,923 - log/train.log - INFO - accuracy:  95.92%; precision:  98.41%; recall:  84.90%; FB1:  91.16
+
+2020-08-03 16:20:13,923 - log/train.log - INFO -               LOC: precision:  98.41%; recall:  84.90%; FB1:  91.16  440
+
+2020-08-03 16:22:00,236 - log/train.log - INFO - iteration:58 step:21/147, NER loss: 0.565476
+2020-08-03 16:30:20,817 - log/train.log - INFO - iteration:58 step:121/147, NER loss: 0.463185
+2020-08-03 16:32:32,054 - log/train.log - INFO - evaluate:dev
+2020-08-03 16:39:04,749 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3138 phrases; correct: 2810.
+
+2020-08-03 16:39:04,749 - log/train.log - INFO - accuracy:  95.82%; precision:  89.55%; recall:  94.74%; FB1:  92.07
+
+2020-08-03 16:39:04,749 - log/train.log - INFO -               LOC: precision:  89.55%; recall:  94.74%; FB1:  92.07  3138
+
+2020-08-03 16:39:04,750 - log/train.log - INFO - evaluate:test
+2020-08-03 16:40:12,493 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 539 phrases; correct: 480.
+
+2020-08-03 16:40:12,494 - log/train.log - INFO - accuracy:  95.48%; precision:  89.05%; recall:  94.12%; FB1:  91.52
+
+2020-08-03 16:40:12,494 - log/train.log - INFO -               LOC: precision:  89.05%; recall:  94.12%; FB1:  91.52  539
+
+2020-08-03 16:46:22,347 - log/train.log - INFO - iteration:59 step:74/147, NER loss: 0.520597
+2020-08-03 16:52:31,157 - log/train.log - INFO - evaluate:dev
+2020-08-03 16:59:03,489 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2625 phrases; correct: 2548.
+
+2020-08-03 16:59:03,489 - log/train.log - INFO - accuracy:  95.51%; precision:  97.07%; recall:  85.91%; FB1:  91.15
+
+2020-08-03 16:59:03,489 - log/train.log - INFO -               LOC: precision:  97.07%; recall:  85.91%; FB1:  91.15  2625
+
+2020-08-03 16:59:03,490 - log/train.log - INFO - evaluate:test
+2020-08-03 17:00:11,184 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 453 phrases; correct: 439.
+
+2020-08-03 17:00:11,184 - log/train.log - INFO - accuracy:  95.86%; precision:  96.91%; recall:  86.08%; FB1:  91.17
+
+2020-08-03 17:00:11,184 - log/train.log - INFO -               LOC: precision:  96.91%; recall:  86.08%; FB1:  91.17  453
+
+2020-08-03 17:02:27,804 - log/train.log - INFO - iteration:60 step:27/147, NER loss: 0.588958
+2020-08-03 17:10:48,423 - log/train.log - INFO - iteration:60 step:127/147, NER loss: 0.514605
+2020-08-03 17:12:29,530 - log/train.log - INFO - evaluate:dev
+2020-08-03 17:19:02,056 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3188 phrases; correct: 2839.
+
+2020-08-03 17:19:02,056 - log/train.log - INFO - accuracy:  95.74%; precision:  89.05%; recall:  95.72%; FB1:  92.27
+
+2020-08-03 17:19:02,056 - log/train.log - INFO -               LOC: precision:  89.05%; recall:  95.72%; FB1:  92.27  3188
+
+2020-08-03 17:19:02,057 - log/train.log - INFO - evaluate:test
+2020-08-03 17:20:09,727 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 542 phrases; correct: 484.
+
+2020-08-03 17:20:09,727 - log/train.log - INFO - accuracy:  95.67%; precision:  89.30%; recall:  94.90%; FB1:  92.02
+
+2020-08-03 17:20:09,727 - log/train.log - INFO -               LOC: precision:  89.30%; recall:  94.90%; FB1:  92.02  542
+
+2020-08-03 17:26:49,636 - log/train.log - INFO - iteration:61 step:80/147, NER loss: 0.526923
+2020-08-03 17:32:27,945 - log/train.log - INFO - evaluate:dev
+2020-08-03 17:39:00,284 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3364 phrases; correct: 2907.
+
+2020-08-03 17:39:00,284 - log/train.log - INFO - accuracy:  95.42%; precision:  86.41%; recall:  98.01%; FB1:  91.85
+
+2020-08-03 17:39:00,284 - log/train.log - INFO -               LOC: precision:  86.41%; recall:  98.01%; FB1:  91.85  3364
+
+2020-08-03 17:39:00,285 - log/train.log - INFO - evaluate:test
+2020-08-03 17:40:08,061 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 567 phrases; correct: 498.
+
+2020-08-03 17:40:08,062 - log/train.log - INFO - accuracy:  96.08%; precision:  87.83%; recall:  97.65%; FB1:  92.48
+
+2020-08-03 17:40:08,062 - log/train.log - INFO -               LOC: precision:  87.83%; recall:  97.65%; FB1:  92.48  567
+
+2020-08-03 17:42:54,592 - log/train.log - INFO - iteration:62 step:33/147, NER loss: 0.529678
+2020-08-03 17:51:15,506 - log/train.log - INFO - iteration:62 step:133/147, NER loss: 0.542839
+2020-08-03 17:52:26,272 - log/train.log - INFO - evaluate:dev
+2020-08-03 17:58:58,755 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2947 phrases; correct: 2722.
+
+2020-08-03 17:58:58,755 - log/train.log - INFO - accuracy:  95.80%; precision:  92.37%; recall:  91.77%; FB1:  92.07
+
+2020-08-03 17:58:58,755 - log/train.log - INFO -               LOC: precision:  92.37%; recall:  91.77%; FB1:  92.07  2947
+
+2020-08-03 17:58:58,756 - log/train.log - INFO - evaluate:test
+2020-08-03 18:00:06,519 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 495 phrases; correct: 466.
+
+2020-08-03 18:00:06,520 - log/train.log - INFO - accuracy:  96.47%; precision:  94.14%; recall:  91.37%; FB1:  92.74
+
+2020-08-03 18:00:06,520 - log/train.log - INFO -               LOC: precision:  94.14%; recall:  91.37%; FB1:  92.74  495
+
+2020-08-03 18:07:20,524 - log/train.log - INFO - iteration:63 step:86/147, NER loss: 0.522790
+2020-08-03 18:12:24,551 - log/train.log - INFO - evaluate:dev
+2020-08-03 18:18:56,810 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3282 phrases; correct: 2885.
+
+2020-08-03 18:18:56,811 - log/train.log - INFO - accuracy:  95.81%; precision:  87.90%; recall:  97.27%; FB1:  92.35
+
+2020-08-03 18:18:56,811 - log/train.log - INFO -               LOC: precision:  87.90%; recall:  97.27%; FB1:  92.35  3282
+
+2020-08-03 18:18:56,811 - log/train.log - INFO - evaluate:test
+2020-08-03 18:20:04,586 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 563 phrases; correct: 495.
+
+2020-08-03 18:20:04,586 - log/train.log - INFO - accuracy:  95.82%; precision:  87.92%; recall:  97.06%; FB1:  92.26
+
+2020-08-03 18:20:04,586 - log/train.log - INFO -               LOC: precision:  87.92%; recall:  97.06%; FB1:  92.26  563
+
+2020-08-03 18:23:17,634 - log/train.log - INFO - iteration:64 step:39/147, NER loss: 0.568579
+2020-08-03 18:31:42,103 - log/train.log - INFO - iteration:64 step:139/147, NER loss: 0.497693
+2020-08-03 18:32:22,388 - log/train.log - INFO - evaluate:dev
+2020-08-03 18:38:54,690 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2811 phrases; correct: 2662.
+
+2020-08-03 18:38:54,690 - log/train.log - INFO - accuracy:  95.97%; precision:  94.70%; recall:  89.75%; FB1:  92.16
+
+2020-08-03 18:38:54,690 - log/train.log - INFO -               LOC: precision:  94.70%; recall:  89.75%; FB1:  92.16  2811
+
+2020-08-03 18:38:54,691 - log/train.log - INFO - evaluate:test
+2020-08-03 18:40:02,573 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 492 phrases; correct: 463.
+
+2020-08-03 18:40:02,573 - log/train.log - INFO - accuracy:  96.13%; precision:  94.11%; recall:  90.78%; FB1:  92.42
+
+2020-08-03 18:40:02,573 - log/train.log - INFO -               LOC: precision:  94.11%; recall:  90.78%; FB1:  92.42  492
+
+2020-08-03 18:47:47,004 - log/train.log - INFO - iteration:65 step:92/147, NER loss: 0.475730
+2020-08-03 18:52:20,658 - log/train.log - INFO - evaluate:dev
+2020-08-03 18:58:53,240 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3035 phrases; correct: 2774.
+
+2020-08-03 18:58:53,240 - log/train.log - INFO - accuracy:  95.84%; precision:  91.40%; recall:  93.53%; FB1:  92.45
+
+2020-08-03 18:58:53,240 - log/train.log - INFO -               LOC: precision:  91.40%; recall:  93.53%; FB1:  92.45  3035
+
+2020-08-03 18:58:53,467 - log/train.log - INFO - new best dev f1 score:92.450
+2020-08-03 18:58:54,317 - log/train.log - INFO - model saved
+2020-08-03 18:58:54,317 - log/train.log - INFO - evaluate:test
+2020-08-03 19:00:02,090 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 518 phrases; correct: 476.
+
+2020-08-03 19:00:02,090 - log/train.log - INFO - accuracy:  96.22%; precision:  91.89%; recall:  93.33%; FB1:  92.61
+
+2020-08-03 19:00:02,090 - log/train.log - INFO -               LOC: precision:  91.89%; recall:  93.33%; FB1:  92.61  518
+
+2020-08-03 19:03:49,623 - log/train.log - INFO - iteration:66 step:45/147, NER loss: 0.606735
+2020-08-03 19:12:10,186 - log/train.log - INFO - iteration:66 step:145/147, NER loss: 0.454239
+2020-08-03 19:12:20,254 - log/train.log - INFO - evaluate:dev
+2020-08-03 19:18:52,667 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3187 phrases; correct: 2828.
+
+2020-08-03 19:18:52,667 - log/train.log - INFO - accuracy:  95.51%; precision:  88.74%; recall:  95.35%; FB1:  91.92
+
+2020-08-03 19:18:52,667 - log/train.log - INFO -               LOC: precision:  88.74%; recall:  95.35%; FB1:  91.92  3187
+
+2020-08-03 19:18:52,668 - log/train.log - INFO - evaluate:test
+2020-08-03 19:20:00,272 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 534 phrases; correct: 483.
+
+2020-08-03 19:20:00,272 - log/train.log - INFO - accuracy:  95.87%; precision:  90.45%; recall:  94.71%; FB1:  92.53
+
+2020-08-03 19:20:00,272 - log/train.log - INFO -               LOC: precision:  90.45%; recall:  94.71%; FB1:  92.53  534
+
+2020-08-03 19:28:10,956 - log/train.log - INFO - iteration:67 step:98/147, NER loss: 0.529214
+2020-08-03 19:32:18,304 - log/train.log - INFO - evaluate:dev
+2020-08-03 19:38:50,999 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3375 phrases; correct: 2921.
+
+2020-08-03 19:38:50,999 - log/train.log - INFO - accuracy:  95.46%; precision:  86.55%; recall:  98.48%; FB1:  92.13
+
+2020-08-03 19:38:50,999 - log/train.log - INFO -               LOC: precision:  86.55%; recall:  98.48%; FB1:  92.13  3375
+
+2020-08-03 19:38:51,000 - log/train.log - INFO - evaluate:test
+2020-08-03 19:39:58,704 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 577 phrases; correct: 502.
+
+2020-08-03 19:39:58,704 - log/train.log - INFO - accuracy:  96.02%; precision:  87.00%; recall:  98.43%; FB1:  92.36
+
+2020-08-03 19:39:58,704 - log/train.log - INFO -               LOC: precision:  87.00%; recall:  98.43%; FB1:  92.36  577
+
+2020-08-03 19:44:15,871 - log/train.log - INFO - iteration:68 step:51/147, NER loss: 0.454980
+2020-08-03 19:52:16,725 - log/train.log - INFO - evaluate:dev
+2020-08-03 19:58:49,168 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3035 phrases; correct: 2769.
+
+2020-08-03 19:58:49,168 - log/train.log - INFO - accuracy:  95.90%; precision:  91.24%; recall:  93.36%; FB1:  92.28
+
+2020-08-03 19:58:49,168 - log/train.log - INFO -               LOC: precision:  91.24%; recall:  93.36%; FB1:  92.28  3035
+
+2020-08-03 19:58:49,169 - log/train.log - INFO - evaluate:test
+2020-08-03 19:59:56,885 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 514 phrases; correct: 474.
+
+2020-08-03 19:59:56,885 - log/train.log - INFO - accuracy:  96.21%; precision:  92.22%; recall:  92.94%; FB1:  92.58
+
+2020-08-03 19:59:56,885 - log/train.log - INFO -               LOC: precision:  92.22%; recall:  92.94%; FB1:  92.58  514
+
+2020-08-03 20:00:17,103 - log/train.log - INFO - iteration:69 step:4/147, NER loss: 0.581292
+2020-08-03 20:08:37,663 - log/train.log - INFO - iteration:69 step:104/147, NER loss: 0.541712
+2020-08-03 20:12:14,738 - log/train.log - INFO - evaluate:dev
+2020-08-03 20:18:47,010 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2505 phrases; correct: 2477.
+
+2020-08-03 20:18:47,010 - log/train.log - INFO - accuracy:  95.28%; precision:  98.88%; recall:  83.51%; FB1:  90.55
+
+2020-08-03 20:18:47,010 - log/train.log - INFO -               LOC: precision:  98.88%; recall:  83.51%; FB1:  90.55  2505
+
+2020-08-03 20:18:47,011 - log/train.log - INFO - evaluate:test
+2020-08-03 20:19:54,691 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 433 phrases; correct: 427.
+
+2020-08-03 20:19:54,691 - log/train.log - INFO - accuracy:  95.30%; precision:  98.61%; recall:  83.73%; FB1:  90.56
+
+2020-08-03 20:19:54,691 - log/train.log - INFO -               LOC: precision:  98.61%; recall:  83.73%; FB1:  90.56  433
+
+2020-08-03 20:24:42,400 - log/train.log - INFO - iteration:70 step:57/147, NER loss: 0.463568
+2020-08-03 20:32:12,750 - log/train.log - INFO - evaluate:dev
+2020-08-03 20:38:45,248 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3162 phrases; correct: 2830.
+
+2020-08-03 20:38:45,249 - log/train.log - INFO - accuracy:  95.93%; precision:  89.50%; recall:  95.41%; FB1:  92.36
+
+2020-08-03 20:38:45,249 - log/train.log - INFO -               LOC: precision:  89.50%; recall:  95.41%; FB1:  92.36  3162
+
+2020-08-03 20:38:45,249 - log/train.log - INFO - evaluate:test
+2020-08-03 20:39:53,022 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 536 phrases; correct: 485.
+
+2020-08-03 20:39:53,022 - log/train.log - INFO - accuracy:  96.19%; precision:  90.49%; recall:  95.10%; FB1:  92.73
+
+2020-08-03 20:39:53,022 - log/train.log - INFO -               LOC: precision:  90.49%; recall:  95.10%; FB1:  92.73  536
+
+2020-08-03 20:40:43,734 - log/train.log - INFO - iteration:71 step:10/147, NER loss: 0.546795
+2020-08-03 20:49:04,129 - log/train.log - INFO - iteration:71 step:110/147, NER loss: 0.468333
+2020-08-03 20:52:10,902 - log/train.log - INFO - evaluate:dev
+2020-08-03 20:58:43,601 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2890 phrases; correct: 2709.
+
+2020-08-03 20:58:43,601 - log/train.log - INFO - accuracy:  96.07%; precision:  93.74%; recall:  91.34%; FB1:  92.52
+
+2020-08-03 20:58:43,601 - log/train.log - INFO -               LOC: precision:  93.74%; recall:  91.34%; FB1:  92.52  2890
+
+2020-08-03 20:58:43,827 - log/train.log - INFO - new best dev f1 score:92.520
+2020-08-03 20:58:44,643 - log/train.log - INFO - model saved
+2020-08-03 20:58:44,643 - log/train.log - INFO - evaluate:test
+2020-08-03 20:59:52,594 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 497 phrases; correct: 467.
+
+2020-08-03 20:59:52,594 - log/train.log - INFO - accuracy:  96.52%; precision:  93.96%; recall:  91.57%; FB1:  92.75
+
+2020-08-03 20:59:52,595 - log/train.log - INFO -               LOC: precision:  93.96%; recall:  91.57%; FB1:  92.75  497
+
+2020-08-03 21:05:06,994 - log/train.log - INFO - iteration:72 step:63/147, NER loss: 0.546671
+2020-08-03 21:12:11,164 - log/train.log - INFO - evaluate:dev
+2020-08-03 21:18:43,634 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3379 phrases; correct: 2929.
+
+2020-08-03 21:18:43,634 - log/train.log - INFO - accuracy:  95.49%; precision:  86.68%; recall:  98.75%; FB1:  92.32
+
+2020-08-03 21:18:43,634 - log/train.log - INFO -               LOC: precision:  86.68%; recall:  98.75%; FB1:  92.32  3379
+
+2020-08-03 21:18:43,635 - log/train.log - INFO - evaluate:test
+2020-08-03 21:19:51,278 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 577 phrases; correct: 503.
+
+2020-08-03 21:19:51,278 - log/train.log - INFO - accuracy:  96.03%; precision:  87.18%; recall:  98.63%; FB1:  92.55
+
+2020-08-03 21:19:51,279 - log/train.log - INFO -               LOC: precision:  87.18%; recall:  98.63%; FB1:  92.55  577
+
+2020-08-03 21:21:12,101 - log/train.log - INFO - iteration:73 step:16/147, NER loss: 0.448462
+2020-08-03 21:29:33,134 - log/train.log - INFO - iteration:73 step:116/147, NER loss: 0.482781
+2020-08-03 21:32:09,671 - log/train.log - INFO - evaluate:dev
+2020-08-03 21:38:42,489 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3173 phrases; correct: 2845.
+
+2020-08-03 21:38:42,489 - log/train.log - INFO - accuracy:  95.92%; precision:  89.66%; recall:  95.92%; FB1:  92.69
+
+2020-08-03 21:38:42,490 - log/train.log - INFO -               LOC: precision:  89.66%; recall:  95.92%; FB1:  92.69  3173
+
+2020-08-03 21:38:42,716 - log/train.log - INFO - new best dev f1 score:92.690
+2020-08-03 21:38:43,573 - log/train.log - INFO - model saved
+2020-08-03 21:38:43,574 - log/train.log - INFO - evaluate:test
+2020-08-03 21:39:51,202 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 539 phrases; correct: 486.
+
+2020-08-03 21:39:51,202 - log/train.log - INFO - accuracy:  96.34%; precision:  90.17%; recall:  95.29%; FB1:  92.66
+
+2020-08-03 21:39:51,202 - log/train.log - INFO -               LOC: precision:  90.17%; recall:  95.29%; FB1:  92.66  539
+
+2020-08-03 21:45:35,378 - log/train.log - INFO - iteration:74 step:69/147, NER loss: 0.556513
+2020-08-03 21:52:08,791 - log/train.log - INFO - evaluate:dev
+2020-08-03 21:58:41,138 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3060 phrases; correct: 2783.
+
+2020-08-03 21:58:41,139 - log/train.log - INFO - accuracy:  95.91%; precision:  90.95%; recall:  93.83%; FB1:  92.37
+
+2020-08-03 21:58:41,139 - log/train.log - INFO -               LOC: precision:  90.95%; recall:  93.83%; FB1:  92.37  3060
+
+2020-08-03 21:58:41,140 - log/train.log - INFO - evaluate:test
+2020-08-03 21:59:48,848 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 518 phrases; correct: 476.
+
+2020-08-03 21:59:48,848 - log/train.log - INFO - accuracy:  96.34%; precision:  91.89%; recall:  93.33%; FB1:  92.61
+
+2020-08-03 21:59:48,848 - log/train.log - INFO -               LOC: precision:  91.89%; recall:  93.33%; FB1:  92.61  518
+
+2020-08-03 22:01:39,986 - log/train.log - INFO - iteration:75 step:22/147, NER loss: 0.478157
+2020-08-03 22:10:00,554 - log/train.log - INFO - iteration:75 step:122/147, NER loss: 0.520159
+2020-08-03 22:12:06,775 - log/train.log - INFO - evaluate:dev
+2020-08-03 22:18:38,769 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3138 phrases; correct: 2830.
+
+2020-08-03 22:18:38,769 - log/train.log - INFO - accuracy:  95.95%; precision:  90.18%; recall:  95.41%; FB1:  92.73
+
+2020-08-03 22:18:38,769 - log/train.log - INFO -               LOC: precision:  90.18%; recall:  95.41%; FB1:  92.73  3138
+
+2020-08-03 22:18:38,999 - log/train.log - INFO - new best dev f1 score:92.730
+2020-08-03 22:18:39,854 - log/train.log - INFO - model saved
+2020-08-03 22:18:39,855 - log/train.log - INFO - evaluate:test
+2020-08-03 22:19:47,685 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 529 phrases; correct: 480.
+
+2020-08-03 22:19:47,685 - log/train.log - INFO - accuracy:  96.18%; precision:  90.74%; recall:  94.12%; FB1:  92.40
+
+2020-08-03 22:19:47,685 - log/train.log - INFO -               LOC: precision:  90.74%; recall:  94.12%; FB1:  92.40  529
+
+2020-08-03 22:26:02,026 - log/train.log - INFO - iteration:76 step:75/147, NER loss: 0.507768
+2020-08-03 22:32:05,236 - log/train.log - INFO - evaluate:dev
+2020-08-03 22:38:37,704 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2902 phrases; correct: 2706.
+
+2020-08-03 22:38:37,705 - log/train.log - INFO - accuracy:  95.96%; precision:  93.25%; recall:  91.23%; FB1:  92.23
+
+2020-08-03 22:38:37,705 - log/train.log - INFO -               LOC: precision:  93.25%; recall:  91.23%; FB1:  92.23  2902
+
+2020-08-03 22:38:37,706 - log/train.log - INFO - evaluate:test
+2020-08-03 22:39:45,311 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 498 phrases; correct: 465.
+
+2020-08-03 22:39:45,312 - log/train.log - INFO - accuracy:  96.22%; precision:  93.37%; recall:  91.18%; FB1:  92.26
+
+2020-08-03 22:39:45,312 - log/train.log - INFO -               LOC: precision:  93.37%; recall:  91.18%; FB1:  92.26  498
+
+2020-08-03 22:42:06,854 - log/train.log - INFO - iteration:77 step:28/147, NER loss: 0.547338
+2020-08-03 22:50:31,203 - log/train.log - INFO - iteration:77 step:128/147, NER loss: 0.473125
+2020-08-03 22:52:02,976 - log/train.log - INFO - evaluate:dev
+2020-08-03 22:58:35,179 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2907 phrases; correct: 2718.
+
+2020-08-03 22:58:35,179 - log/train.log - INFO - accuracy:  96.08%; precision:  93.50%; recall:  91.64%; FB1:  92.56
+
+2020-08-03 22:58:35,179 - log/train.log - INFO -               LOC: precision:  93.50%; recall:  91.64%; FB1:  92.56  2907
+
+2020-08-03 22:58:35,180 - log/train.log - INFO - evaluate:test
+2020-08-03 22:59:42,820 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 502 phrases; correct: 472.
+
+2020-08-03 22:59:42,820 - log/train.log - INFO - accuracy:  96.49%; precision:  94.02%; recall:  92.55%; FB1:  93.28
+
+2020-08-03 22:59:42,820 - log/train.log - INFO -               LOC: precision:  94.02%; recall:  92.55%; FB1:  93.28  502
+
+2020-08-03 22:59:43,048 - log/train.log - INFO - new best test f1 score:93.280
+2020-08-03 23:06:28,009 - log/train.log - INFO - iteration:78 step:81/147, NER loss: 0.527198
+2020-08-03 23:12:00,923 - log/train.log - INFO - evaluate:dev
+2020-08-03 23:18:33,369 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3061 phrases; correct: 2778.
+
+2020-08-03 23:18:33,369 - log/train.log - INFO - accuracy:  95.78%; precision:  90.75%; recall:  93.66%; FB1:  92.19
+
+2020-08-03 23:18:33,369 - log/train.log - INFO -               LOC: precision:  90.75%; recall:  93.66%; FB1:  92.19  3061
+
+2020-08-03 23:18:33,370 - log/train.log - INFO - evaluate:test
+2020-08-03 23:19:40,932 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 523 phrases; correct: 477.
+
+2020-08-03 23:19:40,932 - log/train.log - INFO - accuracy:  96.02%; precision:  91.20%; recall:  93.53%; FB1:  92.35
+
+2020-08-03 23:19:40,932 - log/train.log - INFO -               LOC: precision:  91.20%; recall:  93.53%; FB1:  92.35  523
+
+2020-08-03 23:22:32,715 - log/train.log - INFO - iteration:79 step:34/147, NER loss: 0.499600
+2020-08-03 23:30:57,652 - log/train.log - INFO - iteration:79 step:134/147, NER loss: 0.524203
+2020-08-03 23:31:59,370 - log/train.log - INFO - evaluate:dev
+2020-08-03 23:38:31,849 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3063 phrases; correct: 2789.
+
+2020-08-03 23:38:31,849 - log/train.log - INFO - accuracy:  95.95%; precision:  91.05%; recall:  94.03%; FB1:  92.52
+
+2020-08-03 23:38:31,850 - log/train.log - INFO -               LOC: precision:  91.05%; recall:  94.03%; FB1:  92.52  3063
+
+2020-08-03 23:38:31,850 - log/train.log - INFO - evaluate:test
+2020-08-03 23:39:39,509 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 522 phrases; correct: 479.
+
+2020-08-03 23:39:39,509 - log/train.log - INFO - accuracy:  96.28%; precision:  91.76%; recall:  93.92%; FB1:  92.83
+
+2020-08-03 23:39:39,509 - log/train.log - INFO -               LOC: precision:  91.76%; recall:  93.92%; FB1:  92.83  522
+
+2020-08-03 23:46:58,573 - log/train.log - INFO - iteration:80 step:87/147, NER loss: 0.454126
+2020-08-03 23:51:57,511 - log/train.log - INFO - evaluate:dev
+2020-08-03 23:58:29,929 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2686 phrases; correct: 2593.
+
+2020-08-03 23:58:29,929 - log/train.log - INFO - accuracy:  95.90%; precision:  96.54%; recall:  87.42%; FB1:  91.76
+
+2020-08-03 23:58:29,929 - log/train.log - INFO -               LOC: precision:  96.54%; recall:  87.42%; FB1:  91.76  2686
+
+2020-08-03 23:58:29,930 - log/train.log - INFO - evaluate:test
+2020-08-03 23:59:37,713 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 467 phrases; correct: 454.
+
+2020-08-03 23:59:37,713 - log/train.log - INFO - accuracy:  96.41%; precision:  97.22%; recall:  89.02%; FB1:  92.94
+
+2020-08-03 23:59:37,713 - log/train.log - INFO -               LOC: precision:  97.22%; recall:  89.02%; FB1:  92.94  467
+
+2020-08-04 00:02:55,535 - log/train.log - INFO - iteration:81 step:40/147, NER loss: 0.539686
+2020-08-04 00:11:20,388 - log/train.log - INFO - iteration:81 step:140/147, NER loss: 0.501478
+2020-08-04 00:11:55,733 - log/train.log - INFO - evaluate:dev
+2020-08-04 00:18:28,097 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3384 phrases; correct: 2928.
+
+2020-08-04 00:18:28,097 - log/train.log - INFO - accuracy:  95.66%; precision:  86.52%; recall:  98.72%; FB1:  92.22
+
+2020-08-04 00:18:28,097 - log/train.log - INFO -               LOC: precision:  86.52%; recall:  98.72%; FB1:  92.22  3384
+
+2020-08-04 00:18:28,098 - log/train.log - INFO - evaluate:test
+2020-08-04 00:19:35,864 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 575 phrases; correct: 502.
+
+2020-08-04 00:19:35,864 - log/train.log - INFO - accuracy:  96.06%; precision:  87.30%; recall:  98.43%; FB1:  92.53
+
+2020-08-04 00:19:35,864 - log/train.log - INFO -               LOC: precision:  87.30%; recall:  98.43%; FB1:  92.53  575
+
+2020-08-04 00:27:21,260 - log/train.log - INFO - iteration:82 step:93/147, NER loss: 0.506462
+2020-08-04 00:31:53,921 - log/train.log - INFO - evaluate:dev
+2020-08-04 00:38:26,634 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3316 phrases; correct: 2899.
+
+2020-08-04 00:38:26,634 - log/train.log - INFO - accuracy:  95.66%; precision:  87.42%; recall:  97.74%; FB1:  92.30
+
+2020-08-04 00:38:26,634 - log/train.log - INFO -               LOC: precision:  87.42%; recall:  97.74%; FB1:  92.30  3316
+
+2020-08-04 00:38:26,635 - log/train.log - INFO - evaluate:test
+2020-08-04 00:39:34,379 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 558 phrases; correct: 492.
+
+2020-08-04 00:39:34,380 - log/train.log - INFO - accuracy:  95.86%; precision:  88.17%; recall:  96.47%; FB1:  92.13
+
+2020-08-04 00:39:34,380 - log/train.log - INFO -               LOC: precision:  88.17%; recall:  96.47%; FB1:  92.13  558
+
+2020-08-04 00:43:26,902 - log/train.log - INFO - iteration:83 step:46/147, NER loss: 0.521877
+2020-08-04 00:51:47,260 - log/train.log - INFO - iteration:83 step:146/147, NER loss: 0.485137
+2020-08-04 00:51:52,317 - log/train.log - INFO - evaluate:dev
+2020-08-04 00:58:24,582 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2905 phrases; correct: 2704.
+
+2020-08-04 00:58:24,582 - log/train.log - INFO - accuracy:  95.89%; precision:  93.08%; recall:  91.17%; FB1:  92.11
+
+2020-08-04 00:58:24,582 - log/train.log - INFO -               LOC: precision:  93.08%; recall:  91.17%; FB1:  92.11  2905
+
+2020-08-04 00:58:24,583 - log/train.log - INFO - evaluate:test
+2020-08-04 00:59:32,245 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 490 phrases; correct: 464.
+
+2020-08-04 00:59:32,245 - log/train.log - INFO - accuracy:  96.49%; precision:  94.69%; recall:  90.98%; FB1:  92.80
+
+2020-08-04 00:59:32,245 - log/train.log - INFO -               LOC: precision:  94.69%; recall:  90.98%; FB1:  92.80  490
+
+2020-08-04 01:07:47,638 - log/train.log - INFO - iteration:84 step:99/147, NER loss: 0.445864
+2020-08-04 01:11:50,055 - log/train.log - INFO - evaluate:dev
+2020-08-04 01:18:22,423 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3023 phrases; correct: 2767.
+
+2020-08-04 01:18:22,423 - log/train.log - INFO - accuracy:  95.96%; precision:  91.53%; recall:  93.29%; FB1:  92.40
+
+2020-08-04 01:18:22,423 - log/train.log - INFO -               LOC: precision:  91.53%; recall:  93.29%; FB1:  92.40  3023
+
+2020-08-04 01:18:22,424 - log/train.log - INFO - evaluate:test
+2020-08-04 01:19:30,187 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 516 phrases; correct: 481.
+
+2020-08-04 01:19:30,187 - log/train.log - INFO - accuracy:  96.73%; precision:  93.22%; recall:  94.31%; FB1:  93.76
+
+2020-08-04 01:19:30,188 - log/train.log - INFO -               LOC: precision:  93.22%; recall:  94.31%; FB1:  93.76  516
+
+2020-08-04 01:19:30,419 - log/train.log - INFO - new best test f1 score:93.760
+2020-08-04 01:23:52,991 - log/train.log - INFO - iteration:85 step:52/147, NER loss: 0.551596
+2020-08-04 01:31:48,295 - log/train.log - INFO - evaluate:dev
+2020-08-04 01:38:20,593 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3196 phrases; correct: 2850.
+
+2020-08-04 01:38:20,593 - log/train.log - INFO - accuracy:  95.94%; precision:  89.17%; recall:  96.09%; FB1:  92.50
+
+2020-08-04 01:38:20,593 - log/train.log - INFO -               LOC: precision:  89.17%; recall:  96.09%; FB1:  92.50  3196
+
+2020-08-04 01:38:20,594 - log/train.log - INFO - evaluate:test
+2020-08-04 01:39:28,263 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 533 phrases; correct: 483.
+
+2020-08-04 01:39:28,263 - log/train.log - INFO - accuracy:  96.11%; precision:  90.62%; recall:  94.71%; FB1:  92.62
+
+2020-08-04 01:39:28,263 - log/train.log - INFO -               LOC: precision:  90.62%; recall:  94.71%; FB1:  92.62  533
+
+2020-08-04 01:39:53,494 - log/train.log - INFO - iteration:86 step:5/147, NER loss: 0.465482
+2020-08-04 01:48:14,069 - log/train.log - INFO - iteration:86 step:105/147, NER loss: 0.506113
+2020-08-04 01:51:45,849 - log/train.log - INFO - evaluate:dev
+2020-08-04 01:58:18,369 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3022 phrases; correct: 2770.
+
+2020-08-04 01:58:18,369 - log/train.log - INFO - accuracy:  96.07%; precision:  91.66%; recall:  93.39%; FB1:  92.52
+
+2020-08-04 01:58:18,369 - log/train.log - INFO -               LOC: precision:  91.66%; recall:  93.39%; FB1:  92.52  3022
+
+2020-08-04 01:58:18,370 - log/train.log - INFO - evaluate:test
+2020-08-04 01:59:26,116 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 511 phrases; correct: 468.
+
+2020-08-04 01:59:26,116 - log/train.log - INFO - accuracy:  95.85%; precision:  91.59%; recall:  91.76%; FB1:  91.67
+
+2020-08-04 01:59:26,116 - log/train.log - INFO -               LOC: precision:  91.59%; recall:  91.76%; FB1:  91.67  511
+
+2020-08-04 02:04:19,099 - log/train.log - INFO - iteration:87 step:58/147, NER loss: 0.457140
+2020-08-04 02:11:44,225 - log/train.log - INFO - evaluate:dev
+2020-08-04 02:18:16,401 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3407 phrases; correct: 2937.
+
+2020-08-04 02:18:16,401 - log/train.log - INFO - accuracy:  95.45%; precision:  86.20%; recall:  99.02%; FB1:  92.17
+
+2020-08-04 02:18:16,402 - log/train.log - INFO -               LOC: precision:  86.20%; recall:  99.02%; FB1:  92.17  3407
+
+2020-08-04 02:18:16,403 - log/train.log - INFO - evaluate:test
+2020-08-04 02:19:24,277 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 586 phrases; correct: 502.
+
+2020-08-04 02:19:24,277 - log/train.log - INFO - accuracy:  95.28%; precision:  85.67%; recall:  98.43%; FB1:  91.61
+
+2020-08-04 02:19:24,277 - log/train.log - INFO -               LOC: precision:  85.67%; recall:  98.43%; FB1:  91.61  586
+
+2020-08-04 02:20:19,843 - log/train.log - INFO - iteration:88 step:11/147, NER loss: 0.508206
+2020-08-04 02:28:40,473 - log/train.log - INFO - iteration:88 step:111/147, NER loss: 0.517919
+2020-08-04 02:31:42,146 - log/train.log - INFO - evaluate:dev
+2020-08-04 02:38:14,869 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3147 phrases; correct: 2825.
+
+2020-08-04 02:38:14,869 - log/train.log - INFO - accuracy:  95.75%; precision:  89.77%; recall:  95.25%; FB1:  92.43
+
+2020-08-04 02:38:14,869 - log/train.log - INFO -               LOC: precision:  89.77%; recall:  95.25%; FB1:  92.43  3147
+
+2020-08-04 02:38:14,870 - log/train.log - INFO - evaluate:test
+2020-08-04 02:39:22,539 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 542 phrases; correct: 484.
+
+2020-08-04 02:39:22,539 - log/train.log - INFO - accuracy:  95.76%; precision:  89.30%; recall:  94.90%; FB1:  92.02
+
+2020-08-04 02:39:22,539 - log/train.log - INFO -               LOC: precision:  89.30%; recall:  94.90%; FB1:  92.02  542
+
+2020-08-04 02:44:45,737 - log/train.log - INFO - iteration:89 step:64/147, NER loss: 0.485214
+2020-08-04 02:51:40,773 - log/train.log - INFO - evaluate:dev
+2020-08-04 02:58:13,262 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3117 phrases; correct: 2811.
+
+2020-08-04 02:58:13,262 - log/train.log - INFO - accuracy:  95.78%; precision:  90.18%; recall:  94.77%; FB1:  92.42
+
+2020-08-04 02:58:13,262 - log/train.log - INFO -               LOC: precision:  90.18%; recall:  94.77%; FB1:  92.42  3117
+
+2020-08-04 02:58:13,263 - log/train.log - INFO - evaluate:test
+2020-08-04 02:59:20,942 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 531 phrases; correct: 485.
+
+2020-08-04 02:59:20,942 - log/train.log - INFO - accuracy:  96.38%; precision:  91.34%; recall:  95.10%; FB1:  93.18
+
+2020-08-04 02:59:20,942 - log/train.log - INFO -               LOC: precision:  91.34%; recall:  95.10%; FB1:  93.18  531
+
+2020-08-04 03:00:46,876 - log/train.log - INFO - iteration:90 step:17/147, NER loss: 0.500054
+2020-08-04 03:09:07,880 - log/train.log - INFO - iteration:90 step:117/147, NER loss: 0.515201
+2020-08-04 03:11:39,245 - log/train.log - INFO - evaluate:dev
+2020-08-04 03:18:12,033 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2826 phrases; correct: 2671.
+
+2020-08-04 03:18:12,033 - log/train.log - INFO - accuracy:  96.03%; precision:  94.52%; recall:  90.05%; FB1:  92.23
+
+2020-08-04 03:18:12,034 - log/train.log - INFO -               LOC: precision:  94.52%; recall:  90.05%; FB1:  92.23  2826
+
+2020-08-04 03:18:12,034 - log/train.log - INFO - evaluate:test
+2020-08-04 03:19:19,652 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 486 phrases; correct: 459.
+
+2020-08-04 03:19:19,652 - log/train.log - INFO - accuracy:  96.13%; precision:  94.44%; recall:  90.00%; FB1:  92.17
+
+2020-08-04 03:19:19,652 - log/train.log - INFO -               LOC: precision:  94.44%; recall:  90.00%; FB1:  92.17  486
+
+2020-08-04 03:25:13,047 - log/train.log - INFO - iteration:91 step:70/147, NER loss: 0.436068
+2020-08-04 03:31:37,623 - log/train.log - INFO - evaluate:dev
+2020-08-04 03:38:10,106 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2835 phrases; correct: 2674.
+
+2020-08-04 03:38:10,107 - log/train.log - INFO - accuracy:  95.90%; precision:  94.32%; recall:  90.16%; FB1:  92.19
+
+2020-08-04 03:38:10,107 - log/train.log - INFO -               LOC: precision:  94.32%; recall:  90.16%; FB1:  92.19  2835
+
+2020-08-04 03:38:10,108 - log/train.log - INFO - evaluate:test
+2020-08-04 03:39:17,803 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 483 phrases; correct: 463.
+
+2020-08-04 03:39:17,803 - log/train.log - INFO - accuracy:  96.90%; precision:  95.86%; recall:  90.78%; FB1:  93.25
+
+2020-08-04 03:39:17,804 - log/train.log - INFO -               LOC: precision:  95.86%; recall:  90.78%; FB1:  93.25  483
+
+2020-08-04 03:41:14,029 - log/train.log - INFO - iteration:92 step:23/147, NER loss: 0.537894
+2020-08-04 03:49:34,440 - log/train.log - INFO - iteration:92 step:123/147, NER loss: 0.424974
+2020-08-04 03:51:35,567 - log/train.log - INFO - evaluate:dev
+2020-08-04 03:58:07,800 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3121 phrases; correct: 2822.
+
+2020-08-04 03:58:07,800 - log/train.log - INFO - accuracy:  96.04%; precision:  90.42%; recall:  95.14%; FB1:  92.72
+
+2020-08-04 03:58:07,801 - log/train.log - INFO -               LOC: precision:  90.42%; recall:  95.14%; FB1:  92.72  3121
+
+2020-08-04 03:58:07,801 - log/train.log - INFO - evaluate:test
+2020-08-04 03:59:15,601 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 512 phrases; correct: 474.
+
+2020-08-04 03:59:15,601 - log/train.log - INFO - accuracy:  96.18%; precision:  92.58%; recall:  92.94%; FB1:  92.76
+
+2020-08-04 03:59:15,601 - log/train.log - INFO -               LOC: precision:  92.58%; recall:  92.94%; FB1:  92.76  512
+
+2020-08-04 04:05:35,121 - log/train.log - INFO - iteration:93 step:76/147, NER loss: 0.565996
+2020-08-04 04:11:33,262 - log/train.log - INFO - evaluate:dev
+2020-08-04 04:18:05,876 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2669 phrases; correct: 2582.
+
+2020-08-04 04:18:05,876 - log/train.log - INFO - accuracy:  95.80%; precision:  96.74%; recall:  87.05%; FB1:  91.64
+
+2020-08-04 04:18:05,876 - log/train.log - INFO -               LOC: precision:  96.74%; recall:  87.05%; FB1:  91.64  2669
+
+2020-08-04 04:18:05,877 - log/train.log - INFO - evaluate:test
+2020-08-04 04:19:13,542 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 466 phrases; correct: 447.
+
+2020-08-04 04:19:13,542 - log/train.log - INFO - accuracy:  95.76%; precision:  95.92%; recall:  87.65%; FB1:  91.60
+
+2020-08-04 04:19:13,542 - log/train.log - INFO -               LOC: precision:  95.92%; recall:  87.65%; FB1:  91.60  466
+
+2020-08-04 04:21:40,012 - log/train.log - INFO - iteration:94 step:29/147, NER loss: 0.472592
+2020-08-04 04:30:00,867 - log/train.log - INFO - iteration:94 step:129/147, NER loss: 0.499279
+2020-08-04 04:31:31,676 - log/train.log - INFO - evaluate:dev
+2020-08-04 04:38:04,495 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2546 phrases; correct: 2514.
+
+2020-08-04 04:38:04,495 - log/train.log - INFO - accuracy:  95.72%; precision:  98.74%; recall:  84.76%; FB1:  91.22
+
+2020-08-04 04:38:04,495 - log/train.log - INFO -               LOC: precision:  98.74%; recall:  84.76%; FB1:  91.22  2546
+
+2020-08-04 04:38:04,496 - log/train.log - INFO - evaluate:test
+2020-08-04 04:39:12,195 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 440 phrases; correct: 436.
+
+2020-08-04 04:39:12,195 - log/train.log - INFO - accuracy:  95.96%; precision:  99.09%; recall:  85.49%; FB1:  91.79
+
+2020-08-04 04:39:12,195 - log/train.log - INFO -               LOC: precision:  99.09%; recall:  85.49%; FB1:  91.79  440
+
+2020-08-04 04:46:01,892 - log/train.log - INFO - iteration:95 step:82/147, NER loss: 0.456206
+2020-08-04 04:51:29,901 - log/train.log - INFO - evaluate:dev
+2020-08-04 04:58:02,282 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2934 phrases; correct: 2722.
+
+2020-08-04 04:58:02,282 - log/train.log - INFO - accuracy:  95.89%; precision:  92.77%; recall:  91.77%; FB1:  92.27
+
+2020-08-04 04:58:02,282 - log/train.log - INFO -               LOC: precision:  92.77%; recall:  91.77%; FB1:  92.27  2934
+
+2020-08-04 04:58:02,283 - log/train.log - INFO - evaluate:test
+2020-08-04 04:59:10,140 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 508 phrases; correct: 471.
+
+2020-08-04 04:59:10,140 - log/train.log - INFO - accuracy:  95.85%; precision:  92.72%; recall:  92.35%; FB1:  92.53
+
+2020-08-04 04:59:10,140 - log/train.log - INFO -               LOC: precision:  92.72%; recall:  92.35%; FB1:  92.53  508
+
+2020-08-04 05:02:02,922 - log/train.log - INFO - iteration:96 step:35/147, NER loss: 0.565106
+2020-08-04 05:10:27,540 - log/train.log - INFO - iteration:96 step:135/147, NER loss: 0.485895
+2020-08-04 05:11:28,056 - log/train.log - INFO - evaluate:dev
+2020-08-04 05:18:00,543 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2843 phrases; correct: 2677.
+
+2020-08-04 05:18:00,543 - log/train.log - INFO - accuracy:  95.93%; precision:  94.16%; recall:  90.26%; FB1:  92.17
+
+2020-08-04 05:18:00,543 - log/train.log - INFO -               LOC: precision:  94.16%; recall:  90.26%; FB1:  92.17  2843
+
+2020-08-04 05:18:00,544 - log/train.log - INFO - evaluate:test
+2020-08-04 05:19:08,339 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 497 phrases; correct: 467.
+
+2020-08-04 05:19:08,339 - log/train.log - INFO - accuracy:  96.38%; precision:  93.96%; recall:  91.57%; FB1:  92.75
+
+2020-08-04 05:19:08,339 - log/train.log - INFO -               LOC: precision:  93.96%; recall:  91.57%; FB1:  92.75  497
+
+2020-08-04 05:26:28,529 - log/train.log - INFO - iteration:97 step:88/147, NER loss: 0.451216
+2020-08-04 05:31:26,576 - log/train.log - INFO - evaluate:dev
+2020-08-04 05:37:59,371 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3143 phrases; correct: 2835.
+
+2020-08-04 05:37:59,371 - log/train.log - INFO - accuracy:  96.07%; precision:  90.20%; recall:  95.58%; FB1:  92.81
+
+2020-08-04 05:37:59,371 - log/train.log - INFO -               LOC: precision:  90.20%; recall:  95.58%; FB1:  92.81  3143
+
+2020-08-04 05:37:59,602 - log/train.log - INFO - new best dev f1 score:92.810
+2020-08-04 05:38:00,457 - log/train.log - INFO - model saved
+2020-08-04 05:38:00,458 - log/train.log - INFO - evaluate:test
+2020-08-04 05:39:08,182 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 524 phrases; correct: 484.
+
+2020-08-04 05:39:08,182 - log/train.log - INFO - accuracy:  96.86%; precision:  92.37%; recall:  94.90%; FB1:  93.62
+
+2020-08-04 05:39:08,182 - log/train.log - INFO -               LOC: precision:  92.37%; recall:  94.90%; FB1:  93.62  524
+
+2020-08-04 05:42:30,724 - log/train.log - INFO - iteration:98 step:41/147, NER loss: 0.460854
+2020-08-04 05:50:55,477 - log/train.log - INFO - iteration:98 step:141/147, NER loss: 0.555182
+2020-08-04 05:51:25,736 - log/train.log - INFO - evaluate:dev
+2020-08-04 05:57:58,086 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2784 phrases; correct: 2645.
+
+2020-08-04 05:57:58,086 - log/train.log - INFO - accuracy:  95.84%; precision:  95.01%; recall:  89.18%; FB1:  92.00
+
+2020-08-04 05:57:58,086 - log/train.log - INFO -               LOC: precision:  95.01%; recall:  89.18%; FB1:  92.00  2784
+
+2020-08-04 05:57:58,087 - log/train.log - INFO - evaluate:test
+2020-08-04 05:59:05,832 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 493 phrases; correct: 468.
+
+2020-08-04 05:59:05,832 - log/train.log - INFO - accuracy:  96.67%; precision:  94.93%; recall:  91.76%; FB1:  93.32
+
+2020-08-04 05:59:05,832 - log/train.log - INFO -               LOC: precision:  94.93%; recall:  91.76%; FB1:  93.32  493
+
+2020-08-04 06:07:00,179 - log/train.log - INFO - iteration:99 step:94/147, NER loss: 0.439382
+2020-08-04 06:11:23,530 - log/train.log - INFO - evaluate:dev
+2020-08-04 06:17:55,655 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 2637 phrases; correct: 2562.
+
+2020-08-04 06:17:55,655 - log/train.log - INFO - accuracy:  95.68%; precision:  97.16%; recall:  86.38%; FB1:  91.45
+
+2020-08-04 06:17:55,655 - log/train.log - INFO -               LOC: precision:  97.16%; recall:  86.38%; FB1:  91.45  2637
+
+2020-08-04 06:17:55,656 - log/train.log - INFO - evaluate:test
+2020-08-04 06:19:03,327 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 451 phrases; correct: 442.
+
+2020-08-04 06:19:03,327 - log/train.log - INFO - accuracy:  96.16%; precision:  98.00%; recall:  86.67%; FB1:  91.99
+
+2020-08-04 06:19:03,327 - log/train.log - INFO -               LOC: precision:  98.00%; recall:  86.67%; FB1:  91.99  451
+
+2020-08-04 06:22:56,432 - log/train.log - INFO - iteration:100 step:47/147, NER loss: 0.497826
+2020-08-04 06:31:21,364 - log/train.log - INFO - iteration:101 step:0/147, NER loss: 0.503961
+2020-08-04 06:31:21,364 - log/train.log - INFO - evaluate:dev
+2020-08-04 06:37:53,684 - log/train.log - INFO - processed 38480 tokens with 2966 phrases; found: 3150 phrases; correct: 2836.
+
+2020-08-04 06:37:53,684 - log/train.log - INFO - accuracy:  96.07%; precision:  90.03%; recall:  95.62%; FB1:  92.74
+
+2020-08-04 06:37:53,684 - log/train.log - INFO -               LOC: precision:  90.03%; recall:  95.62%; FB1:  92.74  3150
+
+2020-08-04 06:37:53,685 - log/train.log - INFO - evaluate:test
+2020-08-04 06:39:01,333 - log/train.log - INFO - processed 6932 tokens with 510 phrases; found: 535 phrases; correct: 484.
+
+2020-08-04 06:39:01,334 - log/train.log - INFO - accuracy:  96.02%; precision:  90.47%; recall:  94.90%; FB1:  92.63
+
+2020-08-04 06:39:01,334 - log/train.log - INFO -               LOC: precision:  90.47%; recall:  94.90%; FB1:  92.63  535
+
+ bert/encoder/layer_9/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_9/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_10/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/self/query/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/self/query/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/self/key/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/self/key/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/self/value/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/self/value/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/output/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/attention/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/intermediate/dense/kernel:0 (768, 3072) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/intermediate/dense/bias:0 (3072,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/output/dense/kernel:0 (3072, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/output/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/output/LayerNorm/beta:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/encoder/layer_11/output/LayerNorm/gamma:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/pooler/dense/kernel:0 (768, 768) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s bert/pooler/dense/bias:0 (768,) , *INIT_FROM_CKPT*
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_w_xi:0 (768, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_w_hi:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_w_ci:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_w_xo:0 (768, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_w_ho:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_w_co:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_w_xc:0 (768, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_w_hc:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_b_i:0 (200,) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_b_c:0 (200,) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/fw/coupled_input_forget_gate_lstm_cell/_b_o:0 (200,) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_w_xi:0 (768, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_w_hi:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_w_ci:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_w_xo:0 (768, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_w_ho:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_w_co:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_w_xc:0 (768, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_w_hc:0 (200, 200) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_b_i:0 (200,) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_b_c:0 (200,) 
+  name = %s, shape = %s%s char_BiLSTM/bidirectional_rnn/bw/coupled_input_forget_gate_lstm_cell/_b_o:0 (200,) 
+  name = %s, shape = %s%s project/hidden/W:0 (400, 200) 
+  name = %s, shape = %s%s project/hidden/b:0 (200,) 
+  name = %s, shape = %s%s project/logits/W:0 (200, 5) 
+  name = %s, shape = %s%s project/logits/b:0 (5,) 
+  name = %s, shape = %s%s crf_loss/transitions:0 (6, 6) 
